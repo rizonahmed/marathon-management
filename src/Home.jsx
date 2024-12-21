@@ -13,6 +13,88 @@ const Home = () => {
 
 
 
+<section>
+                <div className="py-16 bg-gray-50">
+                    <div className="container mx-auto px-6 lg:px-20 grid grid-cols-1 lg:grid-cols-2 gap-8">
+                     
+                        <div className="grid grid-cols-2 gap-4">
+                            <img
+                                src="https://media.istockphoto.com/id/1300123069/photo/runners-running-towards-the-finish-line.jpg?s=612x612&w=0&k=20&c=XNlsYwQWlHHIlNYaxLuJU-YrD46ZTdPh9WWQpOt6Z60="
+                                alt="Running group 1"
+                                className="rounded-lg shadow-lg w-full h-full object-cover"
+                            />
+                            <img
+                                src="https://t4.ftcdn.net/jpg/07/99/70/25/360_F_799702562_A7t9cKYyK0l1E1ymOM9nAYacx5OOI4gB.jpg"
+                                alt="Running group 2"
+                                className="rounded-lg shadow-lg w-full h-full object-cover"
+                            />
+                            <img
+                                src="https://static.vecteezy.com/system/resources/thumbnails/036/114/878/small_2x/ai-generated-multiethnic-group-of-people-running-in-the-city-on-a-sunny-day-ai-generated-free-photo.jpg"
+                                alt="Running group 3"
+                                className="rounded-lg shadow-lg w-full h-full object-cover col-span-2"
+                            />
+                        </div>
+ 
+                        <div className="flex flex-col justify-center">
+                            <p className="text-sm text-green-600 font-semibold uppercase mb-2">
+                                About Our Program
+                            </p>
+                            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+                                WHERE EVERY STEP TAKES YOU{' '}
+                                <span className="text-green-600 bg-green-100 px-1">CLOSER TO GLORY</span>.
+                            </h2>
+                            <p className="text-gray-600 mb-8">
+                                Join us in a journey to build endurance, confidence, and community.
+                                Designed for runners of all levels, our program provides the perfect
+                                blend of challenge and support.
+                            </p>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="flex items-center space-x-4">
+                                    <div className="text-green-600 text-4xl">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="currentColor"
+                                            viewBox="0 0 24 24"
+                                            className="w-10 h-10"
+                                        >
+                                            <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2c4.411 0 8 3.589 8 8s-3.589 8-8 8-8-3.589-8-8 3.589-8 8-8zm-4 8H6l4-4 4 4h-2v4h-4v-4z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-lg font-bold text-green-600">Our Vision</h3>
+                                        <p className="text-gray-600">
+                                            To inspire and connect runners of all levels, creating a strong,
+                                            supportive community.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-center space-x-4">
+                                    <div className="text-green-600 text-4xl">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="currentColor"
+                                            viewBox="0 0 24 24"
+                                            className="w-10 h-10"
+                                        >
+                                            <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 2a8 8 0 110 16 8 8 0 010-16zm1 3h-2v6h2V7zm-2 8h2v2h-2v-2z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-lg font-bold text-green-600">Our Mission</h3>
+                                        <p className="text-gray-600">
+                                            To promote healthy lifestyles through running, fostering growth,
+                                            and well-being.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
 
 
             <section className="py-16 bg-gray-100">
