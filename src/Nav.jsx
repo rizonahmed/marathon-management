@@ -21,7 +21,7 @@ const Nav = () => {
             })
     }
     return (
-      <div className='sticky top-0 z-10 bg-white' >
+      <div className='sticky top-0 z-10 bg-white border-b' >
         <div className="navbar  md:w-11/12 mx-auto ">
             <div className="navbar-start">
                 <div className="dropdown">
@@ -74,8 +74,8 @@ const Nav = () => {
                             >
                                 Sign Out
                             </button> </div>
-                        : <>  <Link to="/login"><button className='btn'> Login</button> </Link>
-                            <Link to="/register"><button className='btn'> Register</button> </Link>  </>
+                        : <>  <Link to="/login"><button className='btn  bg-gradient-to-r from-gray-600 to-teal-500 text-white'> Login</button> </Link>
+                            <Link to="/register"><button className='btn bg-gradient-to-r from-teal-500  to-gray-600 text-white'> Register</button> </Link>  </>
                 }
 
             </div>
