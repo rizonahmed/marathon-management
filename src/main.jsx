@@ -13,6 +13,9 @@ import Marathons from './Marathons.jsx';
 import Login from './Login.jsx';
 import Register from './Register.jsx';
 import AuthProvider from './AuthProvider.jsx';
+import { BsDash } from 'react-icons/bs';
+import Dashboard from './Dashboard.jsx';
+import Private from './Private.jsx';
 
 const router = createBrowserRouter([
   {
@@ -25,7 +28,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/marathons',
-        element: <Marathons></Marathons>
+        element:<Private>  <Marathons></Marathons></Private>
       },
       {
         path: '/login',
@@ -36,7 +39,8 @@ const router = createBrowserRouter([
         element: <Register></Register>
       },
       {
-
+      path: '/dashboard',
+      element: <Private> <Dashboard></Dashboard></Private>
       }
      
     ]

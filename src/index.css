@@ -27,11 +27,11 @@
     animation: glow 1.5s ease-in-out infinite;
     box-shadow: 
     0 0 25px rgba(0, 255, 242, 0.6),
-    0 0 45px rgba(255, 0, 242, 0.5),
-    0 0 80px rgba(136, 255, 0, 0.4),
-    0 0 100px rgba(255, 0, 255, 0.7),
+    0 0 25px rgba(255, 0, 242, 0.5),
+    0 0 20px rgba(136, 255, 0, 0.4),
+    0 0 20px rgba(255, 0, 255, 0.7),
     0 0 30px rgba(255, 182, 193, 0.8),   
-    0 0 60px rgba(255, 182, 193, 0.7); 
+    0 0 20px rgba(255, 182, 193, 0.7); 
    
  }
    
@@ -45,40 +45,100 @@
     animation: glow 1.5s ease-in-out infinite;
     box-shadow: 
     0 0 20px rgb(86, 42, 248),  
-    0 0 60px rgb(248, 57, 57),  
+    0 0 20px rgb(248, 57, 57),  
     0 0 20px rgb(245, 99, 147),   
-    0 0 80px rgb(245, 159, 48),  
+    0 0 20px rgb(245, 159, 48),  
     0 0 20px rgba(252, 115, 252, 0.9),   
     0 0 20px rgba(133, 73, 245, 0.87); 
 }
 
-@keyframes rotate-border {
-    0% {
-      transform: rotate(0deg);
-      border-color: red;
-    }
-    25% {
-      transform: rotate(90deg);
-      border-color: blue;
-    }
-    50% {
-      transform: rotate(180deg);
-      border-color: green;
-    }
-    75% {
-      transform: rotate(270deg);
-      border-color: yellow;
-    }
-    100% {
-      transform: rotate(360deg);
-      border-color: red;
-    }
-  }
-  
-  .border {
+.animation-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 20px; /* Increased border-radius for a more rounded wrapper */
+}
 
-    border: 5px solid red;  
-    border-radius: 10px;  
-    animation: rotate-border 4s linear infinite; 
+.anim-name {
+  position: relative;
+  z-index: 1;
+  border-radius: 20px 40px 20px 40px;  
+  border: 8px solid;
+  border-image-source: linear-gradient(
+    90deg,
+    #1abc9c,
+    #3498db,
+    #9b59b6,
+    #e74c3c,
+    #f1c40f,
+    #e67e22,
+    #1abc9c
+  );
+  border-image-slice: 1;
+  animation: border-color-animation 4s linear infinite;
+  transition: all 0.3s ease;
+  padding: 20px;
+}
+
+@keyframes border-color-animation {
+  0% {
+    border-image-source: linear-gradient(
+      90deg,
+      #1abc9c,
+      #3498db,
+      #9b59b6,
+      #e74c3c,
+      #f1c40f,
+      #e67e22,
+      #1abc9c
+    );
   }
-  
+  25% {
+    border-image-source: linear-gradient(
+      180deg,
+      #3498db,
+      #9b59b6,
+      #e74c3c,
+      #f1c40f,
+      #e67e22,
+      #1abc9c,
+      #3498db
+    );
+  }
+  50% {
+    border-image-source: linear-gradient(
+      270deg,
+      #9b59b6,
+      #e74c3c,
+      #f1c40f,
+      #e67e22,
+      #1abc9c,
+      #3498db,
+      #9b59b6
+    );
+  }
+  75% {
+    border-image-source: linear-gradient(
+      360deg,
+      #e74c3c,
+      #f1c40f,
+      #e67e22,
+      #1abc9c,
+      #3498db,
+      #9b59b6,
+      #e74c3c
+    );
+  }
+  100% {
+    border-image-source: linear-gradient(
+      450deg,
+      #1abc9c,
+      #3498db,
+      #9b59b6,
+      #e74c3c,
+      #f1c40f,
+      #e67e22,
+      #1abc9c
+    );
+  }
+}

@@ -4,14 +4,14 @@ import { AuthContext } from './AuthProvider';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
     const [isYearly, setIsYearly] = useState(false);
 
     const togglePlan = () => {
         setIsYearly(!isYearly);
     };
 
-   
+
 
     return (
         <div>
@@ -27,47 +27,50 @@ const Home = () => {
                             backgroundImage: "url(https://cdn.fleetfeet.com/a:2.4-f:cover-w:1440/assets/Chicago_marathon-start_240510_100603.jpeg?s=2dbee361)",
                         }}>
                         <div className="hero-overlay bg-opacity"></div>
-                        <div className=''>  
-                        <div className="card bg-[#0000007e] hero-content text-neutral-content text-center py-8 px-10 mx-5 md:mx-0  hit cardd">
-                           
-                           
-                            <div className="max-w-md">
 
-                                <h1 className="mb-5 text-5xl font-bold">
-                                    <span style={{ color: 'white', fontWeight: 'bold' }}>
-                                        <Typewriter
-                                            words={['Join the Marathon Today']}
-                                            loop={5}
-                                            cursor
-                                            cursorStyle='_'
-                                            typeSpeed={70}
-                                            deleteSpeed={50}
-                                            delaySpeed={1000}
-                                        />
-                                    </span>
-                                </h1>
+                        <div className="animation-wrapper hit bit">
+                            <div className="anim-name bg-[#0000007e] hero-content text-neutral-content text-center py-8 px-10 mx-5 md:mx-0 hit cardd">
+                                <div className="max-w-md">
+                                    <h1 className="mb-5 text-5xl font-bold text-white">
+                                        <span style={{ fontWeight: 'bold' }}>
+                                            <Typewriter
+                                                words={['Join the Marathon Today']}
+                                                loop={5}
+                                                cursor
+                                                cursorStyle="_"
+                                                typeSpeed={70}
+                                                deleteSpeed={50}
+                                                delaySpeed={1000}
+                                            />
+                                        </span>
+                                    </h1>
 
-                                <p className="mb-5"> Sign up now and be part of an unforgettable experience! Participate in a community-driven event that promotes health, fitness, and a spirit of camaraderie. Challenge yourself and make memories that last a lifetime. </p>
+                                    <p className="mb-5 text-white">
+                                        Sign up now and be part of an unforgettable experience! Participate in a community-driven event that promotes health, fitness, and a spirit of camaraderie. Challenge yourself and make memories that last a lifetime.
+                                    </p>
 
-                                {
-                                    user ? 
-                                    
-                                        <Link to=""> <button className="btn bg-gradient-to-r from-gray-600 to-teal-500 text-white font-bold text-base">
-                                            See Campaign </button> </Link> 
-                                        : <Link to="/register"><button className="btn bg-gradient-to-r from-teal-500 to-gray-700 text-white font-bold text-base">
-                                            Sign Up Now
-                                        </button> </Link>
-                                }
-
+                                    {/* Conditional rendering of the button based on user state */}
+                                    {user ?
+                                        <Link to="">
+                                            <button className="btn bg-gradient-to-r from-gray-600 to-teal-500 text-white font-bold text-base">
+                                                See Campaign
+                                            </button>
+                                        </Link>
+                                        :
+                                        <Link to="/register">
+                                            <button className="btn bg-gradient-to-r from-teal-500 to-gray-700 text-white font-bold text-base">
+                                                Sign Up Now
+                                            </button>
+                                        </Link>
+                                    }
+                                </div>
                             </div>
-
-                        </div>
                         </div>
 
                     </div>
                     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                        <a href="#slide4" className="btn btn-circle">❮</a>
-                        <a href="#slide2" className="btn btn-circle">❯</a>
+                        <a href="#slide4" className="btn btn-circle z-10">❮</a>
+                        <a href="#slide2" className="btn btn-circle z-10">❯</a>
                     </div>
                 </div>
 
@@ -100,10 +103,10 @@ const Home = () => {
                                 </p>
 
                                 {
-                                    user ? 
-                                    
+                                    user ?
+
                                         <Link to=""> <button className="btn bg-gradient-to-r from-gray-600 to-teal-500 text-white font-bold text-base">
-                                            See Campaign </button> </Link> 
+                                            See Campaign </button> </Link>
                                         : <Link to="/register"><button className="btn bg-gradient-to-r from-teal-500 to-gray-700 text-white font-bold text-base">
                                             Sign Up Now
                                         </button> </Link>
@@ -146,10 +149,10 @@ const Home = () => {
                                 <p className="mb-5"> Get ready to run your best race yet! Access exclusive training guides, workout plans, and nutritional advice designed by experts to help you excel in the marathon.</p>
 
                                 {
-                                    user ? 
-                                    
+                                    user ?
+
                                         <Link to=""> <button className="btn bg-gradient-to-r from-gray-600 to-teal-500 text-white font-bold text-base">
-                                            See Campaign </button> </Link> 
+                                            See Campaign </button> </Link>
                                         : <Link to="/register"><button className="btn bg-gradient-to-r from-teal-500 to-gray-700 text-white font-bold text-base">
                                             Sign Up Now
                                         </button> </Link>
@@ -191,10 +194,10 @@ const Home = () => {
                                 <p className="mb-5"> A marathon is more than just a race; it's a journey. Celebrate milestones, honor participants, and share the joy of accomplishments. Let’s make every step count!</p>
 
                                 {
-                                    user ? 
-                                    
+                                    user ?
+
                                         <Link to=""> <button className="btn bg-gradient-to-r from-gray-600 to-teal-500 text-white font-bold text-base">
-                                            See Campaign </button> </Link> 
+                                            See Campaign </button> </Link>
                                         : <Link to="/register"><button className="btn bg-gradient-to-r from-teal-500 to-gray-700 text-white font-bold text-base">
                                             Sign Up Now
                                         </button> </Link>
