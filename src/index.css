@@ -1,3 +1,84 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hit{
+    border-radius: 10px 40px 10px 40px;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.7);
+}
+.fit{
+    border-radius: 40px 10px 40px 10px;
+    box-shadow: 0 0 20px rgba(0, 128, 255, 1), 0 0 40px rgba(0, 128, 255, 0.8);
+    
+    }
+.bit{
+    border-radius: 40px 10px 40px 10px;
+    box-shadow: 0 0 20px rgba(255, 115, 0, 0.692), 0 0 30px rgba(98, 0, 255, 0.459);
+    }
+ 
+
+ .cardd {
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+  
+  .cardd:hover {
+    transform: translateY(-10px);
+    animation: glow 1.5s ease-in-out infinite;
+    box-shadow: 
+    0 0 25px rgba(0, 255, 242, 0.6),
+    0 0 45px rgba(255, 0, 242, 0.5),
+    0 0 80px rgba(136, 255, 0, 0.4),
+    0 0 100px rgba(255, 0, 255, 0.7),
+    0 0 30px rgba(255, 182, 193, 0.8),   
+    0 0 60px rgba(255, 182, 193, 0.7); 
+   
+ }
+   
+ .cart {
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+  
+  .cart:hover {
+    transform: translateY(10px);
+    animation: glow 1.5s ease-in-out infinite;
+    box-shadow: 
+    0 0 20px rgb(86, 42, 248),  
+    0 0 60px rgb(248, 57, 57),  
+    0 0 20px rgb(245, 99, 147),   
+    0 0 80px rgb(245, 159, 48),  
+    0 0 20px rgba(252, 115, 252, 0.9),   
+    0 0 20px rgba(133, 73, 245, 0.87); 
+}
+
+@keyframes rotate-border {
+    0% {
+      transform: rotate(0deg);
+      border-color: red;
+    }
+    25% {
+      transform: rotate(90deg);
+      border-color: blue;
+    }
+    50% {
+      transform: rotate(180deg);
+      border-color: green;
+    }
+    75% {
+      transform: rotate(270deg);
+      border-color: yellow;
+    }
+    100% {
+      transform: rotate(360deg);
+      border-color: red;
+    }
+  }
+  
+  .border {
+
+    border: 5px solid red;  
+    border-radius: 10px;  
+    animation: rotate-border 4s linear infinite; 
+  }
+  

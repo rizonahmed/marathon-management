@@ -1,22 +1,227 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { Typewriter } from 'react-simple-typewriter'
+import { AuthContext } from './AuthProvider';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
+    const {user} = useContext(AuthContext)
     const [isYearly, setIsYearly] = useState(false);
 
     const togglePlan = () => {
         setIsYearly(!isYearly);
     };
 
+   
+
     return (
         <div>
 
 
+                               
 
 
-<section>
+
+
+            <div className="carousel w-full">
+
+                <div id="slide1" className="carousel-item relative w-full">
+                    <div
+                        className="hero min-h-[80vh]"
+                        style={{
+                            backgroundImage: "url(https://cdn.fleetfeet.com/a:2.4-f:cover-w:1440/assets/Chicago_marathon-start_240510_100603.jpeg?s=2dbee361)",
+                        }}>
+                        <div className="hero-overlay bg-opacity"></div>
+                        <div className=''>  
+                        <div className="card bg-[#0000007e] hero-content text-neutral-content text-center py-8 px-10 mx-5 md:mx-0  hit cardd">
+                           
+                           
+                            <div className="max-w-md">
+
+                                <h1 className="mb-5 text-5xl font-bold">
+                                    <span style={{ color: 'white', fontWeight: 'bold' }}>
+                                        <Typewriter
+                                            words={['Join the Marathon Today']}
+                                            loop={5}
+                                            cursor
+                                            cursorStyle='_'
+                                            typeSpeed={70}
+                                            deleteSpeed={50}
+                                            delaySpeed={1000}
+                                        />
+                                    </span>
+                                </h1>
+
+                                <p className="mb-5"> Sign up now and be part of an unforgettable experience! Participate in a community-driven event that promotes health, fitness, and a spirit of camaraderie. Challenge yourself and make memories that last a lifetime. </p>
+
+                                {
+                                    user ? 
+                                    
+                                        <Link to=""> <button className="btn bg-gradient-to-r from-gray-600 to-teal-500 text-white font-bold text-base">
+                                            See Campaign </button> </Link> 
+                                        : <Link to="/register"><button className="btn bg-gradient-to-r from-teal-500 to-gray-700 text-white font-bold text-base">
+                                            Sign Up Now
+                                        </button> </Link>
+                                }
+
+                            </div>
+
+                        </div>
+                        </div>
+
+                    </div>
+                    <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                        <a href="#slide4" className="btn btn-circle">❮</a>
+                        <a href="#slide2" className="btn btn-circle">❯</a>
+                    </div>
+                </div>
+
+                <div id="slide2" className="carousel-item relative w-full">
+                    <div
+                        className="hero min-h-[80vh]"
+                        style={{
+                            backgroundImage: "url(https://hips.hearstapps.com/hmg-prod/images/race-day-1656663170.jpg)",
+                        }}>
+                        <div className="hero-overlay bg-opacity"></div>
+                        <div className="card bg-[#0000007e] hero-content text-neutral-content text-center py-8 px-10 mx-5 md:mx-0 fit cart">
+                            <div className="max-w-md">
+
+                                <h1 className="mb-5 text-5xl font-bold">
+                                    <span style={{ color: ' ', fontWeight: 'bold' }}>
+                                        <Typewriter
+                                            words={['Support Fellow Runners']}
+                                            loop={5}
+                                            cursor
+                                            cursorStyle='_'
+                                            typeSpeed={70}
+                                            deleteSpeed={50}
+                                            delaySpeed={1000}
+                                        />
+                                    </span>
+                                </h1>
+
+                                <p className="mb-5">
+                                    Be a part of a supportive community. Cheer on runners, provide essential aid, or volunteer for various roles during the event. Together, we ensure everyone has an incredible marathon experience.
+                                </p>
+
+                                {
+                                    user ? 
+                                    
+                                        <Link to=""> <button className="btn bg-gradient-to-r from-gray-600 to-teal-500 text-white font-bold text-base">
+                                            See Campaign </button> </Link> 
+                                        : <Link to="/register"><button className="btn bg-gradient-to-r from-teal-500 to-gray-700 text-white font-bold text-base">
+                                            Sign Up Now
+                                        </button> </Link>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                    <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                        <a href="#slide1" className="btn btn-circle">❮</a>
+                        <a href="#slide3" className="btn btn-circle">❯</a>
+                    </div>
+                </div>
+
+                <div id="slide3" className="carousel-item relative w-full">
+                    <div
+                        className="hero min-h-[80vh]"
+                        style={{
+                            backgroundImage: "url(https://images.ctfassets.net/rxqefefl3t5b/6dbXz640rx6vIpNvF8I7p8/ff31b647ee9c5d938b3bb71ff15cdbfa/85210416_10157583299184748_8441948264000913408_o.jpg?fl=progressive&q=80)",
+                        }}>
+                        <div className="hero-overlay bg-opacity-60"></div>
+                        <div className="card bg-[#0000007e] hero-content text-neutral-content text-center mx-5 md:mx-0 py-8 px-10 hit cardd">
+                            <div className="max-w-md">
+
+                                <h1 className="mb-5 text-5xl font-bold">
+                                    <span style={{ color: ' ', fontWeight: 'bold' }}>
+                                        <Typewriter
+                                            words={['Marathon Training Programs']}
+                                            loop={5}
+                                            cursor
+                                            cursorStyle='_'
+                                            typeSpeed={70}
+                                            deleteSpeed={50}
+                                            delaySpeed={1000}
+                                        />
+                                    </span>
+                                </h1>
+
+
+                                <p className="mb-5"> Get ready to run your best race yet! Access exclusive training guides, workout plans, and nutritional advice designed by experts to help you excel in the marathon.</p>
+
+                                {
+                                    user ? 
+                                    
+                                        <Link to=""> <button className="btn bg-gradient-to-r from-gray-600 to-teal-500 text-white font-bold text-base">
+                                            See Campaign </button> </Link> 
+                                        : <Link to="/register"><button className="btn bg-gradient-to-r from-teal-500 to-gray-700 text-white font-bold text-base">
+                                            Sign Up Now
+                                        </button> </Link>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                    <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                        <a href="#slide2" className="btn btn-circle">❮</a>
+                        <a href="#slide4" className="btn btn-circle">❯</a>
+                    </div>
+                </div>
+
+                <div id="slide4" className="carousel-item relative w-full">
+                    <div
+                        className="hero min-h-[80vh]"
+                        style={{
+                            backgroundImage: "url(https://marathontours.com/wp-content/uploads/sites/2/2024/07/ANA09629-scaled.jpg)",
+                        }}>
+                        <div className="hero-overlay bg-opacity"></div>
+                        <div className="card bg-[#0000007e] hero-content text-neutral-content text-center mx-5 md:mx-0 py-8 px-10 fit cart">
+                            <div className="max-w-md">
+
+                                <h1 className="mb-5 text-5xl font-bold">
+                                    <span style={{ color: '', fontWeight: 'bold' }}>
+                                        <Typewriter
+                                            words={['Celebrating Achievements']}
+                                            loop={Infinity}
+                                            cursor
+                                            cursorStyle='_'
+                                            typeSpeed={70}
+                                            deleteSpeed={50}
+                                            delaySpeed={1000}
+                                        />
+                                    </span>
+                                </h1>
+
+                                <p className="mb-5"> A marathon is more than just a race; it's a journey. Celebrate milestones, honor participants, and share the joy of accomplishments. Let’s make every step count!</p>
+
+                                {
+                                    user ? 
+                                    
+                                        <Link to=""> <button className="btn bg-gradient-to-r from-gray-600 to-teal-500 text-white font-bold text-base">
+                                            See Campaign </button> </Link> 
+                                        : <Link to="/register"><button className="btn bg-gradient-to-r from-teal-500 to-gray-700 text-white font-bold text-base">
+                                            Sign Up Now
+                                        </button> </Link>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                    <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                        <a href="#slide3" className="btn btn-circle">❮</a>
+                        <a href="#slide1" className="btn btn-circle">❯</a>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+            <section>
                 <div className="py-16 bg-gray-50">
                     <div className="container mx-auto px-6 lg:px-20 grid grid-cols-1 lg:grid-cols-2 gap-8">
-                     
+
                         <div className="grid grid-cols-2 gap-4">
                             <img
                                 src="https://media.istockphoto.com/id/1300123069/photo/runners-running-towards-the-finish-line.jpg?s=612x612&w=0&k=20&c=XNlsYwQWlHHIlNYaxLuJU-YrD46ZTdPh9WWQpOt6Z60="
@@ -34,7 +239,7 @@ const Home = () => {
                                 className="rounded-lg shadow-lg w-full h-full object-cover col-span-2"
                             />
                         </div>
- 
+
                         <div className="flex flex-col justify-center">
                             <p className="text-sm text-green-600 font-semibold uppercase mb-2">
                                 About Our Program
