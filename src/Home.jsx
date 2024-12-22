@@ -17,10 +17,6 @@ const Home = () => {
         <div>
 
 
-                               
-
-
-
 
             <div className="carousel w-full">
 
@@ -219,7 +215,7 @@ const Home = () => {
 
 
             <section>
-                <div className="py-16 bg-gray-50">
+                <div className="py-16 ">
                     <div className="container mx-auto px-6 lg:px-20 grid grid-cols-1 lg:grid-cols-2 gap-8">
 
                         <div className="grid grid-cols-2 gap-4">
@@ -244,11 +240,11 @@ const Home = () => {
                             <p className="text-sm text-green-600 font-semibold uppercase mb-2">
                                 About Our Program
                             </p>
-                            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+                            <h2 className="text-4xl font-bold  mb-4">
                                 WHERE EVERY STEP TAKES YOU{' '}
-                                <span className="text-green-600 bg-green-100 px-1">CLOSER TO GLORY</span>.
+                                <span className="text-green-600 bg-green-100 px-1 mt-2">CLOSER TO GLORY</span>.
                             </h2>
-                            <p className="text-gray-600 mb-8">
+                            <p className=" mb-8">
                                 Join us in a journey to build endurance, confidence, and community.
                                 Designed for runners of all levels, our program provides the perfect
                                 blend of challenge and support.
@@ -302,14 +298,14 @@ const Home = () => {
             </section>
 
 
-            <section className="py-16 bg-gray-100">
+            <section className="py-16 ">
                 <div className="container mx-auto px-6 lg:px-20">
                     <div className="text-center mb-12">
                         <p className="text-green-600 font-semibold text-lg">Simple Pricing</p>
-                        <h2 className="text-4xl font-bold text-gray-800">
+                        <h2 className="text-4xl font-bold  ">
                             Choose Your Perfect Plan
                         </h2>
-                        <p className="text-gray-500 mt-4">
+                        <p className="  mt-4">
                             Craftwork's plans are paid monthly or yearly. We make it simple to start —
                             and stop — your service at any time.
                         </p>
@@ -341,11 +337,11 @@ const Home = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
                         {!isYearly ? (
                             <>
-                                <div className="bg-white rounded-lg shadow-lg p-6">
-                                    <h3 className="text-xl font-bold text-green-600 mb-2">Starter</h3>
-                                    <p className="text-gray-500 mb-6">A beautiful, simple website</p>
-                                    <h4 className="text-4xl font-bold text-gray-800 mb-6">$12</h4>
-                                    <ul className="text-gray-600 space-y-3">
+                                <div className=" bg-gray-800  rounded-lg shadow-lg p-6">
+                                    <h3 className="text-xl  font-bold text-green-600 mb-2">Starter</h3>
+                                    <p className="text-white mb-6">A beautiful, simple website</p>
+                                    <h4 className="text-4xl font-bold text-white  mb-6">$12</h4>
+                                    <ul className=" text-white space-y-3">
                                         <li>✔️ 20 Workouts</li>
                                         <li>✔️ Exercise plans in Mobile</li>
                                         <li>✔️ One-on-one coaching</li>
@@ -357,11 +353,11 @@ const Home = () => {
                                     </button>
                                 </div>
 
-                                <div className="bg-gray-100 rounded-lg shadow-lg p-6">
-                                    <h3 className="text-xl font-bold text-gray-800 mb-2">Pro</h3>
-                                    <p className="text-gray-500 mb-6">Perfect for Expert</p>
-                                    <h4 className="text-4xl font-bold text-gray-800 mb-6">$18</h4>
-                                    <ul className="text-gray-600 space-y-3">
+                                <div className="bg-gray-800 rounded-lg shadow-lg p-6">
+                                    <h3 className="text-xl font-bold text-green-600  mb-2">Pro</h3>
+                                    <p className="text-white  mb-6">Perfect for Expert</p>
+                                    <h4 className="text-4xl text-white font-bold  mb-6">$18</h4>
+                                    <ul className="text-white space-y-3">
                                         <li>✔️ 20 Workouts</li>
                                         <li>✔️ Exercise plans in Mobile</li>
                                         <li>✔️ One-on-one coaching</li>
@@ -369,18 +365,18 @@ const Home = () => {
                                         <li>✔️ Weekly check-ins</li>
                                         <li>✔️ 24/7 Customer Support</li>
                                     </ul>
-                                    <button className="mt-6 w-full py-2 bg-gray-900 text-white rounded-md hover:bg-gray-800">
+                                    <button className="mt-6 w-full py-2 bg-green-600 text-white rounded-md hover:bg-green-600">
                                         Get Started
                                     </button>
                                 </div>
                             </>
                         ) : (
                             <>
-                                <div className="bg-white rounded-lg shadow-lg p-6">
+                                <div className="bg-gray-800 rounded-lg shadow-lg p-6">
                                     <h3 className="text-xl font-bold text-green-600 mb-2">Starter</h3>
-                                    <p className="text-gray-500 mb-6">A beautiful, simple website</p>
-                                    <h4 className="text-4xl font-bold text-gray-800 mb-6">$120</h4>
-                                    <ul className="text-gray-600 space-y-3">
+                                    <p className="text-white mb-6">A beautiful, simple website</p>
+                                    <h4 className="text-4xl font-bold text-white mb-6">$120</h4>
+                                    <ul className="text-white space-y-3">
                                         <li>✔️ 30 Workouts</li>
                                         <li>✔️ Exclusive Exercise plans</li>
                                         <li>✔️ One-on-one coaching</li>
@@ -392,18 +388,18 @@ const Home = () => {
                                     </button>
                                 </div>
 
-                                <div className="bg-gray-100 rounded-lg shadow-lg p-6">
-                                    <h3 className="text-xl font-bold text-gray-800 mb-2">Pro</h3>
-                                    <p className="text-gray-500 mb-6">Perfect for Expert</p>
-                                    <h4 className="text-4xl font-bold text-gray-800 mb-6">$180</h4>
-                                    <ul className="text-gray-600 space-y-3">
+                                <div className=" bg-gray-800 rounded-lg shadow-lg p-6">
+                                    <h3 className="text-xl font-bold text-green-600 mb-2">Pro</h3>
+                                    <p className=" text-white mb-6">Perfect for Expert</p>
+                                    <h4 className="text-4xl font-bold text-white mb-6">$180</h4>
+                                    <ul className="text-white space-y-3">
                                         <li>✔️ 40 Workouts</li>
                                         <li>✔️ Premium Exercise plans</li>
                                         <li>✔️ Personal coaching</li>
                                         <li>✔️ Weekly check-ins</li>
                                         <li>✔️ 24/7 Priority Support</li>
                                     </ul>
-                                    <button className="mt-6 w-full py-2 bg-gray-900 text-white rounded-md hover:bg-gray-800">
+                                    <button className="mt-6 w-full py-2 bg-green-600   text-white rounded-md hover:bg-green-600">
                                         Get Started
                                     </button>
                                 </div>
@@ -411,7 +407,7 @@ const Home = () => {
                         )}
                     </div>
 
-                    <div className="text-center mt-12 text-gray-600">
+                    <div className="text-center mt-12  ">
                         <p>
                             Have questions about plans? <a href="mailto:rizonahmed0486@gmail.com" target='blank' className="text-green-600 underline">Let’s talk</a>
                         </p>

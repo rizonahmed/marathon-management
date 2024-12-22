@@ -6,6 +6,8 @@ import { updateProfile } from 'firebase/auth';
 import { auth } from './firebase.init';
 
 import { FaGoogle } from 'react-icons/fa';
+import Lottie from 'lottie-react';
+import registerAnimation from './assets/register.json'
 
 const Register = () => {
 
@@ -111,18 +113,15 @@ const Register = () => {
       }
 
     return (
-        <div>
+        <div className='md:w-11/12 mx-auto'>
 
-            <div
-                className="hero min-h-screen px-3"
-                >
-                <div className="hero-overlay bg-opacity-35"></div>
+            <div className="hero min-h-screen px-3 flex justify-center w-11/12 mx-auto">
+               
 
                 <div
-                    className="card w-full  max-w-lg shrink-0 shadow-2xl p-1 "
+                    className="card w-full  max-w-lg shrink-0 shadow-2xl p-1 bg-gray-200"
                     style={{
-                        background: "linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(240, 240, 240, 0.6))",
-                        backdropFilter: "blur(12px)",
+                         backdropFilter: "blur(12px)",
                         borderRadius: "15px",
                         border: "1px solid rgba(255, 255, 255, 0.3)",  
                     }}
@@ -198,7 +197,11 @@ const Register = () => {
                     <p className='text-center pb-8 pt-5 text-black font-medium'> Already have an account? <Link className='underline' to="/login"> Login Now </Link> </p>
                 </div>
 
+                
+                <div className='w-96'> <Lottie animationData={registerAnimation}></Lottie></div>
+
             </div>
+
 
 
         </div>
