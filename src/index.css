@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
+a.active{
+  background-color: rgb(29, 25, 25);
+  color: rgb(33, 221, 158);
+  font-weight: 600;
+}
+
 .hit{
     border-radius: 10px 40px 10px 40px;
     box-shadow: 0 0 30px rgba(0, 255, 0, 0.7);
