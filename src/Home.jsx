@@ -13,6 +13,56 @@ const Home = () => {
     };
 
 
+    const marathons = [
+        {
+            id: 1,
+            title: "City Marathon 2024",
+            location: "New York City, NY",
+            registrationStartDate: "2024-01-15",
+            registrationEndDate: "2024-02-15",
+            imageUrl: "https://example.com/marathon1.jpg",
+        },
+        {
+            id: 2,
+            title: "Sunset Trail Run",
+            location: "Los Angeles, CA",
+            registrationStartDate: "2024-03-01",
+            registrationEndDate: "2024-03-31",
+            imageUrl: "https://example.com/marathon2.jpg",
+        },
+        {
+            id: 3,
+            title: "Spring Challenge 2024",
+            location: "Chicago, IL",
+            registrationStartDate: "2024-02-10",
+            registrationEndDate: "2024-03-10",
+            imageUrl: "https://example.com/marathon3.jpg",
+        },
+        {
+            id: 4,
+            title: "Desert Run 2024",
+            location: "Phoenix, AZ",
+            registrationStartDate: "2024-04-01",
+            registrationEndDate: "2024-04-20",
+            imageUrl: "https://example.com/marathon4.jpg",
+        },
+        {
+            id: 5,
+            title: "Ocean Breeze Marathon",
+            location: "Miami, FL",
+            registrationStartDate: "2024-05-01",
+            registrationEndDate: "2024-05-30",
+            imageUrl: "https://example.com/marathon5.jpg",
+        },
+        {
+            id: 6,
+            title: "Mountain Adventure Run",
+            location: "Denver, CO",
+            registrationStartDate: "2024-06-01",
+            registrationEndDate: "2024-06-20",
+            imageUrl: "https://example.com/marathon6.jpg",
+        },
+    ];
 
     return (
         <div>
@@ -216,8 +266,162 @@ const Home = () => {
             </div>
 
 
+            <div className="w-11/12 lg:w-10/12 mx-auto my-12 p-6">
+                <h2 className="text-4xl font-extrabold text-center  mb-8">Apply Here Just Now</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {cards.map((marathon) => (
+                        <div
+                            key={marathon._id}
+                            className="bg-white border rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300 overflow-hidden"
+                        >
+                            <div className="relative h-40">
+                                <img
+                                    src={marathon.marathonImageUrl || 'https://via.placeholder.com/150'}
+                                    alt={marathon.marathonTitle}
+                                    className="w-full h-full object-cover"
+                                />
+                                <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                    <p className="text-white font-semibold">Click for Details</p>
+                                </div>
+                            </div>
+                            <div className="p-5">
+                                <h3 className="text-xl font-bold text-green-600">{marathon.marathonTitle}</h3>
+                                <p className="text-gray-500 text-sm">{marathon.location}</p>
+                                <p className="text-gray-600 text-sm mt-2">
+                                    <span className="font-semibold">Registration:</span>{' '}
+                                    {new Date(marathon.registrationStartDate).toLocaleDateString()} -{' '}
+                                    {new Date(marathon.registrationEndDate).toLocaleDateString()}
+                                </p>
+                                <Link><button className="mt-4 w-full  bg-gradient-to-r from-gray-600 to-teal-500 text-white py-2 rounded-lg hover:bg-green-700 transition-shadow hover:shadow-md">
+                                    See Details
+                                </button></Link>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
 
 
+            <div className="w-11/12 lg:w-9/12  mx-auto my-12">
+      <h2 className="text-4xl font-extrabold text-center mb-8">
+        Upcoming Marathons
+      </h2>
+      <div className="grid grid-cols-1 gap-8 ">
+        <div className="flex items-center border rounded-lg overflow-hidden shadow-lg">
+          <img
+            src="https://cms-in.musafir.com/uploads/9_Marathons_in_India_that_you_must_run_at_least_once_in_your_lifetime_671eb2c549.png"
+            alt="Marathon"
+            className="w-1/3 h-full object-cover"
+          />
+          <div className="p-4 w-2/3">
+            <span className="inline-block bg-green-100 text-green-600 text-xs font-semibold px-3 py-1 rounded-full mb-2">
+              Upcoming
+            </span>
+            <h3 className="text-2xl font-bold mb-1">Bangladesh Heritage Run</h3>
+            <p className="text-gray-600 mb-1">Location: Dhaka, Bangladesh</p>
+            <p className="text-gray-600">Prize Money: $10,000</p>
+            <p className="text-sm text-gray-500 mt-2">
+              Registration: Jan 1, 2024 - Feb 28, 2024
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-center border rounded-lg overflow-hidden shadow-lg">
+          <img
+            src="https://s3.ap-southeast-1.amazonaws.com/images.asianage.com/images/aa-Cover-6g98slub5mf36hjul7r8te5lu6-20180808222136.Medi.jpeg"
+            alt="Marathon"
+            className="w-1/3 h-full object-cover"
+          />
+          <div className="p-4 w-2/3">
+            <span className="inline-block bg-green-100 text-green-600 text-xs font-semibold px-3 py-1 rounded-full mb-2">
+              Upcoming
+            </span>
+            <h3 className="text-2xl font-bold mb-1">City Lights Marathon</h3>
+            <p className="text-gray-600 mb-1">Location: Mumbai, India</p>
+            <p className="text-gray-600">Prize Money: $15,000</p>
+            <p className="text-sm text-gray-500 mt-2">
+              Registration: Mar 1, 2024 - Apr 30, 2024
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-center border rounded-lg overflow-hidden shadow-lg">
+          <img
+            src="https://thebridge.in/wp-content/uploads/2020/10/A-still-from-Airtel-Delhi-Half-Marathon.jpg"
+            alt="Marathon"
+            className="w-1/3 h-full object-cover"
+          />
+          <div className="p-4 w-2/3">
+            <span className="inline-block bg-green-100 text-green-600 text-xs font-semibold px-3 py-1 rounded-full mb-2">
+              Upcoming
+            </span>
+            <h3 className="text-2xl font-bold mb-1">Airtel Half Marathon</h3>
+            <p className="text-gray-600 mb-1">Location: Delhi, India</p>
+            <p className="text-gray-600">Prize Money: $12,000</p>
+            <p className="text-sm text-gray-500 mt-2">
+              Registration: Apr 1, 2024 - May 31, 2024
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-center border rounded-lg overflow-hidden shadow-lg">
+          <img
+            src="https://mybestruns.com/photo/1277.jpg?ver=1539617670"
+            alt="Marathon"
+            className="w-1/3 h-full object-cover"
+          />
+          <div className="p-4 w-2/3">
+            <span className="inline-block bg-green-100 text-green-600 text-xs font-semibold px-3 py-1 rounded-full mb-2">
+              Upcoming
+            </span>
+            <h3 className="text-2xl font-bold mb-1">Sunrise Marathon</h3>
+            <p className="text-gray-600 mb-1">Location: Bangalore, India</p>
+            <p className="text-gray-600">Prize Money: $8,000</p>
+            <p className="text-sm text-gray-500 mt-2">
+              Registration: May 1, 2024 - Jun 30, 2024
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-center border rounded-lg overflow-hidden shadow-lg">
+          <img
+            src="https://www.nathanflear.co.uk/wp-content/uploads/2024/08/running-in-india-indian-runners.jpg"
+            alt="Marathon"
+            className="w-1/3 h-full object-cover"
+          />
+          <div className="p-4 w-2/3">
+            <span className="inline-block bg-green-100 text-green-600 text-xs font-semibold px-3 py-1 rounded-full mb-2">
+              Upcoming
+            </span>
+            <h3 className="text-2xl font-bold mb-1">Freedom Marathon</h3>
+            <p className="text-gray-600 mb-1">Location: Kolkata, India</p>
+            <p className="text-gray-600">Prize Money: $9,000</p>
+            <p className="text-sm text-gray-500 mt-2">
+              Registration: Jul 1, 2024 - Aug 31, 2024
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-center border rounded-lg overflow-hidden shadow-lg">
+          <img
+            src="https://media.licdn.com/dms/image/D4D12AQEA1k9BEpifpA/article-cover_image-shrink_720_1280/0/1714468261700?e=2147483647&v=beta&t=Z7C1FPBNn_Oxsv6z2Re4jk92nPra-To9nYpQTV9h99A"
+            alt="Marathon"
+            className="w-1/3 h-full object-cover"
+          />
+          <div className="p-4 w-2/3">
+            <span className="inline-block bg-green-100 text-green-600 text-xs font-semibold px-3 py-1 rounded-full mb-2">
+              Upcoming
+            </span>
+            <h3 className="text-2xl font-bold mb-1">Heritage City Run</h3>
+            <p className="text-gray-600 mb-1">Location: singapore</p>
+            <p className="text-gray-600">Prize Money: $11,000</p>
+            <p className="text-sm text-gray-500 mt-2">
+              Registration: Sep 1, 2024 - Oct 31, 2024
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
             <section>
                 <div className="py-16 ">
                     <div className="container mx-auto px-6 lg:px-20 grid grid-cols-1 lg:grid-cols-2 gap-8">

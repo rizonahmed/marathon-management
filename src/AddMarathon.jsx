@@ -59,7 +59,6 @@ const AddMarathon = () => {
         <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-2xl">
             <h2 className="text-2xl font-bold mb-6 text-center">Create a Marathon Event</h2>
             <form onSubmit={handleSubmit}>
-                {/* Marathon Title */}
                 <div className="mb-4">
                     <label className="block text-gray-700 font-bold mb-2">Marathon Title</label>
                     <input
@@ -72,9 +71,7 @@ const AddMarathon = () => {
                     />
                 </div>
 
-                {/* Dates Section (Flexbox Layout) */}
                 <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-3">
-                    {/* Start Registration Date */}
                     <div>
                         <label className="block text-gray-700 font-bold mb-2">Start Registration Date</label>
                         <DatePicker
@@ -86,7 +83,6 @@ const AddMarathon = () => {
                         />
                     </div>
 
-                    {/* End Registration Date */}
                     <div>
                         <label className="block text-gray-700 font-bold mb-2">End Registration Date</label>
                         <DatePicker
@@ -98,7 +94,6 @@ const AddMarathon = () => {
                         />
                     </div>
 
-                    {/* Marathon Start Date */}
                     <div>
                         <label className="block text-gray-700 font-bold mb-2">Marathon Start Date</label>
                         <DatePicker
@@ -111,7 +106,6 @@ const AddMarathon = () => {
                     </div>
                 </div>
 
-                {/* Location */}
                 <div className="mb-4">
                     <label className="block text-gray-700 font-bold mb-2">Location</label>
                     <input
@@ -124,7 +118,6 @@ const AddMarathon = () => {
                     />
                 </div>
 
-                {/* Running Distance */}
                 <div className="mb-4">
                     <label className="block text-gray-700 font-bold mb-2">Running Distance</label>
                     <select
@@ -142,7 +135,6 @@ const AddMarathon = () => {
                     </select>
                 </div>
 
-                {/* Description */}
                 <div className="mb-4">
                     <label className="block text-gray-700 font-bold mb-2">Description</label>
                     <textarea
@@ -155,7 +147,6 @@ const AddMarathon = () => {
                     ></textarea>
                 </div>
 
-                {/* Marathon Image URL */}
                 <div className="mb-4">
                     <label className="block text-gray-700 font-bold mb-2">Marathon Image URL</label>
                     <input
@@ -168,7 +159,6 @@ const AddMarathon = () => {
                     />
                 </div>
 
-                {/* Submit Button */}
                 <button
                     type="submit"
                     className="w-full bg-teal-600 text-white p-3 rounded hover:bg-teal-700 transition"

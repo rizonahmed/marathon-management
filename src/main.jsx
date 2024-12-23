@@ -19,11 +19,13 @@ import Private from './Private.jsx';
 import AddMarathon from './AddMarathon.jsx';
 import MarathonList from './MarathonList.jsx';
 import ApplyList from './ApplyList.jsx';
+import Error from './Error.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+errorElement:<Error></Error>,
     children: [
       {
         path: '/',
