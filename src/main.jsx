@@ -27,7 +27,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element:<Home></Home>
+        element:<Home></Home>,
+        loader: ()=> fetch('http://localhost:5000/limitedData')
       },
       {
         path: '/marathons',
@@ -46,7 +47,7 @@ const router = createBrowserRouter([
       element: <Private> <Dashboard></Dashboard></Private>,
       children: [
         {
-          path: 'addMarathon',
+          path: '/dashboard/addMarathon',
           element: <Private><AddMarathon></AddMarathon></Private>
         },
         {

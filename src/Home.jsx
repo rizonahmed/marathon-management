@@ -1,9 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { Typewriter } from 'react-simple-typewriter'
 import { AuthContext } from './AuthProvider';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Home = () => {
+    const cards = useLoaderData()
     const { user } = useContext(AuthContext)
     const [isYearly, setIsYearly] = useState(false);
 

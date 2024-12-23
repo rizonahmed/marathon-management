@@ -1,6 +1,8 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import Swal from 'sweetalert2';
 
 const AddMarathon = () => {
     const [marathonTitle, setMarathonTitle] = useState('');
@@ -25,16 +27,36 @@ const AddMarathon = () => {
             description,
             marathonImageUrl,
             createdAt: new Date(),
-            totalRegistrationCount: 0,  
+            totalRegistrationCount: 0 ,
         };
 
-        console.log('Marathon Details:', marathonDetails);
+        axios.post('http://localhost:5000/allMarathons', marathonDetails)
+            .then((result) => {
+                Swal.fire({
+                    title: "Good job Marathon Added Successfully!",
+                    text: "You Can Add More !",
+                    icon: "success"
+                });
 
-       
+                
+                setMarathonTitle('');
+                setRegistrationStartDate(null);
+                setRegistrationEndDate(null);
+                setMarathonStartDate(null);
+                setLocation('');
+                setRunningDistance('');
+                setDescription('');
+                setMarathonImageUrl('');
+            })
+            .catch((error) => {
+                console.log(error.message)
+            })
+
+
     };
 
     return (
-        <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
+        <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-2xl">
             <h2 className="text-2xl font-bold mb-6 text-center">Create a Marathon Event</h2>
             <form onSubmit={handleSubmit}>
                 {/* Marathon Title */}

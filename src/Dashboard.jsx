@@ -11,7 +11,6 @@ const Dashboard = () => {
                 <p><NavLink className='block p-2 border text-center rounded-xl  text-xs  md:text-base' to="/dashboard/applyList"> My apply list</NavLink></p>
               </div>
               <div  className='  col-span-9'>
-                
                <Outlet></Outlet>
               </div>
         </div>
