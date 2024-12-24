@@ -22,6 +22,8 @@ import ApplyList from './ApplyList.jsx';
 import Error from './Error.jsx';
 import Details from './Details.jsx';
 import ApplyPage from './ApplyPage.jsx';
+import About from './About.jsx';
+import Services from './Services.jsx';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +47,14 @@ errorElement:<Error></Error>,
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path:'/about',
+        element:<About></About>
+      },
+      {
+        path: '/services',
+        element:<Services></Services>
       },
       {
          path: '/details/:id',

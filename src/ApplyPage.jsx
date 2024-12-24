@@ -60,7 +60,6 @@ const ApplyPage = () => {
                 additionalInfo: "",
               });
       
-         navigate( '/dashboard/applyList')
 
       } else {
         console.error("Registration failed.");

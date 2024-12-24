@@ -48,7 +48,7 @@ const Details = () => {
       </div>
 
       <div className="mt-8">
-        <h1 className="text-4xl font-extrabold text-center mb-4 text-green-600">
+        <h1 className="text-4xl font-extrabold text-center mb-4 ">
           {marathon.marathonTitle}
         </h1>
         <p className="text-center text-gray-700 text-lg">{marathon.description}</p>
@@ -86,7 +86,7 @@ const Details = () => {
           {isOngoing ? (
           <Link to={`/applyPage/${marathon?._id}`}>  <button
           onClick={handleRegister}
-          className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
+          className="px-6 py-2 bg-gradient-to-r from-teal-500  to-gray-600 text-white rounded-lg   transition"
         >
           Register Now
         </button></Link>
