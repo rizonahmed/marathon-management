@@ -5,7 +5,8 @@ import Swal from 'sweetalert2';
 
 
 const Nav = () => {
-    const { user, signOutUser } = useContext(AuthContext)
+    const { user, signOutUser } = useContext(AuthContext);
+    console.log(user);
 
     const handleSignOut = () => {
         signOutUser()

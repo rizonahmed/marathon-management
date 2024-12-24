@@ -53,7 +53,14 @@ const ApplyPage = () => {
                 title: "Apply successful",
               });
 
-        //  navigate( '/dashboard/applyList')
+              setFormData({
+                firstName: "",
+                lastName: "",
+                contactNumber: "",
+                additionalInfo: "",
+              });
+      
+         navigate( '/dashboard/applyList')
 
       } else {
         console.error("Registration failed.");

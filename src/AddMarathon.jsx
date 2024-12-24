@@ -1,10 +1,12 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Swal from 'sweetalert2';
+import { AuthContext } from './AuthProvider';
 
 const AddMarathon = () => {
+    const {user} = useContext(AuthContext)
     const [marathonTitle, setMarathonTitle] = useState('');
     const [registrationStartDate, setRegistrationStartDate] = useState(null);
     const [registrationEndDate, setRegistrationEndDate] = useState(null);
@@ -28,6 +30,7 @@ const AddMarathon = () => {
             marathonImageUrl,
             createdAt: new Date(),
             totalRegistrationCount: 0 ,
+            email:user?.email
         };
 
         axios.post('http://localhost:5000/allMarathons', marathonDetails)
@@ -54,6 +57,8 @@ const AddMarathon = () => {
 
 
     };
+
+    
 
     return (
         <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-2xl">

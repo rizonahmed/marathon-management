@@ -422,6 +422,8 @@ const Home = () => {
         </div>
       </div>
             </div>
+
+            
             <section>
                 <div className="py-16 ">
                     <div className="container mx-auto px-6 lg:px-20 grid grid-cols-1 lg:grid-cols-2 gap-8">

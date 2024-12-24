@@ -3,6 +3,7 @@ import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 
 const Details = () => {
   const marathon = useLoaderData();
+  const [loader, setLoader] =useState(true)
   console.log(marathon);
   const [totalRegistrations, setTotalRegistrations] = useState(marathon.totalRegistrations || 0);
   const navigate = useNavigate();
@@ -24,6 +25,10 @@ const Details = () => {
       });
     }
   };
+
+ if(loader){
+    <div className='text-center text-gray-700 text-3xl'> <span className="loading loading-ring loading-lg text-lime-600"></span> </div>
+ }
 
   return (
     <div className="max-w-5xl mx-auto my-12 p-6 border rounded-lg shadow-lg">
