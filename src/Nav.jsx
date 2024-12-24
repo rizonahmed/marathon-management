@@ -45,7 +45,7 @@ const Nav = () => {
                         <li className='my-1'> <NavLink to="/"> <button> Home</button></NavLink></li>
                         <li className='my-1'> <NavLink to="/marathons"> <button> Marathons </button></NavLink></li>
                         {
-                            user && <li className='mx-1'> <NavLink to="/dashboard"> <button> Dashboard </button></NavLink></li>
+                            user && <li className='mx-1'> <NavLink to="/dashboard/addMarathon"> <button> Dashboard </button></NavLink></li>
                         }
 
                     </ul>

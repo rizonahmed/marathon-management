@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Marathons = () => {
     const [marathons, setMarathons] = useState([]);
@@ -43,12 +43,12 @@ const Marathons = () => {
                             <p className="text-gray-600 mb-2">
                                 <strong>Registration:</strong> {new Date(marathon.registrationStartDate).toLocaleDateString()} - {new Date(marathon.registrationEndDate).toLocaleDateString()}
                             </p>
-                            <button 
+                            <Link to={`/details/${marathon._id}`}><button 
                                 onClick={() => handleSeeDetails(marathon.id)} 
                                 className="mt-3 w-full bg-teal-600 text-white py-2 rounded-lg hover:bg-teal-700 transition"
                             >
                                 See Details
-                            </button>
+                            </button></Link>
                         </div>
                     </div>
                 ))}

@@ -274,7 +274,7 @@ const Home = () => {
                             key={marathon._id}
                             className="bg-white border rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300 overflow-hidden"
                         >
-                            <div className="relative h-40">
+                            <div className="relative h-52">
                                 <img
                                     src={marathon.marathonImageUrl || 'https://via.placeholder.com/150'}
                                     alt={marathon.marathonTitle}
@@ -292,7 +292,7 @@ const Home = () => {
                                     {new Date(marathon.registrationStartDate).toLocaleDateString()} -{' '}
                                     {new Date(marathon.registrationEndDate).toLocaleDateString()}
                                 </p>
-                                <Link><button className="mt-4 w-full  bg-gradient-to-r from-gray-600 to-teal-500 text-white py-2 rounded-lg hover:bg-green-700 transition-shadow hover:shadow-md">
+                                <Link to={`/details/${marathon._id}`}><button className="mt-4 w-full  bg-gradient-to-r from-gray-600 to-teal-500 text-white py-2 rounded-lg hover:bg-green-700 transition-shadow hover:shadow-md">
                                     See Details
                                 </button></Link>
                             </div>
@@ -421,7 +421,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </div>
+            </div>
             <section>
                 <div className="py-16 ">
                     <div className="container mx-auto px-6 lg:px-20 grid grid-cols-1 lg:grid-cols-2 gap-8">
