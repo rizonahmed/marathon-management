@@ -34,11 +34,13 @@ const Nav = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                        <li className='my-1'> <NavLink to="/"> <button> Home</button></NavLink></li>
-                        <li className='my-1'> <NavLink to="/marathons"> <button> Marathons </button></NavLink></li>
+                        <li className='my-1 border-2 rounded-xl'> <NavLink to="/"> <button> Home</button></NavLink></li>
+                        <li className='my-1 border-2 rounded-xl'> <NavLink to="/marathons"> <button> Marathons </button></NavLink></li>
                         {
-                            user && <li className='mx-1'> <NavLink to="/dashboard/addMarathon"> <button> Dashboard </button></NavLink></li>
+                            user && <li className='mx-1 border-2 rounded-xl'> <NavLink to="/dashboard/addMarathon"> <button> Dashboard </button></NavLink></li>
                         }
+                         <li className='mx-1 border-2 rounded-xl'> <NavLink to="/services"> <button> Our Services </button></NavLink></li>
+                         <li className='mx-1 border-2 rounded-xl'> <NavLink to="/about"> <button> About Us </button></NavLink></li>
 
                     </ul>
                 </div>
@@ -46,11 +48,14 @@ const Nav = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 ">
-                    <li className='mx-1'> <NavLink to="/"> <button> Home</button></NavLink></li>
-                    <li className='mx-1'> <NavLink to="/marathons"> <button> Marathons </button></NavLink></li>
+                    <li className='mx-1 border-2 rounded-xl'> <NavLink to="/"> <button> Home</button></NavLink></li>
+                    <li className='mx-1 border-2 rounded-xl'> <NavLink to="/marathons"> <button> Marathons </button></NavLink></li>
                     {
-                        user && <li className='mx-1'> <NavLink to="/dashboard/addMarathon"> <button> Dashboard </button></NavLink></li>
+                        user && <li className='mx-1 border-2 rounded-xl'> <NavLink to="/dashboard/addMarathon"> <button> Dashboard </button></NavLink></li>
                     }
+                     <li className='mx-1 border-2 rounded-xl'> <NavLink to="/services"> <button> Our Services </button></NavLink></li>
+                     <li className='mx-1 border-2 rounded-xl'> <NavLink to="/about"> <button> About Us </button></NavLink></li>
+
                 </ul>
             </div>
             <div className="navbar-end gap-2">

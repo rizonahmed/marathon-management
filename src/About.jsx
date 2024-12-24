@@ -89,7 +89,7 @@ const About = () => {
 
                     <div className="md:w-1/2 flex justify-center">
                         <img
-                            src="https://therecursive.com/wp-content/uploads/2022/02/founders.jpg" // Replace with your image path
+                            src="https://therecursive.com/wp-content/uploads/2022/02/founders.jpg" // 
                             alt="Nice to Meet You"
                             className="rounded-lg shadow-lg max-w-md lg:max-w-lg"
                         />
