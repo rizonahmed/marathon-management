@@ -21,6 +21,7 @@ import MarathonList from './MarathonList.jsx';
 import ApplyList from './ApplyList.jsx';
 import Error from './Error.jsx';
 import Details from './Details.jsx';
+import ApplyPage from './ApplyPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -47,10 +48,14 @@ errorElement:<Error></Error>,
       },
       {
          path: '/details/:id',
-         element: <Details></Details>,
+         element: <Private><Details></Details></Private>,
          loader: ({ params }) =>  fetch(`http://localhost:5000/allMarathons/${params.id}`)
       },
-
+      {
+        path:'/applyPage/:id',
+        element:<Private><ApplyPage></ApplyPage></Private>,
+        loader: ({ params }) =>  fetch(`http://localhost:5000/allMarathons/${params.id}`)
+      },
       {
       path: '/dashboard',
       element: <Private> <Dashboard></Dashboard></Private>,

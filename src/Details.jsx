@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { useLoaderData, useNavigate } from 'react-router-dom';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 
 const Details = () => {
   const marathon = useLoaderData();
+  console.log(marathon);
   const [totalRegistrations, setTotalRegistrations] = useState(marathon.totalRegistrations || 0);
   const navigate = useNavigate();
 
-  // Validate if the current date is within the registration period
   const currentDate = new Date();
   const isOngoing =
     currentDate >= new Date(marathon.registrationStartDate) &&
@@ -15,10 +15,9 @@ const Details = () => {
 
   const handleRegister = () => {
     if (isOngoing) {
-      // Navigate to the registration page
       navigate(`/register/${marathon._id}`, {
         state: {
-          email: "user@example.com", // Replace with the logged-in user's email
+          email: "user@example.com", 
           marathonTitle: marathon.marathonTitle,
           marathonStartDate: marathon.marathonStartDate,
         },
@@ -28,7 +27,6 @@ const Details = () => {
 
   return (
     <div className="max-w-5xl mx-auto my-12 p-6 border rounded-lg shadow-lg">
-      {/* Marathon Banner */}
       <div className="relative">
         <img
           src={marathon.marathonImageUrl}
@@ -44,7 +42,6 @@ const Details = () => {
         </div>
       </div>
 
-      {/* Marathon Details */}
       <div className="mt-8">
         <h1 className="text-4xl font-extrabold text-center mb-4 text-green-600">
           {marathon.marathonTitle}
@@ -75,19 +72,19 @@ const Details = () => {
 
         <div className="mt-8 text-center">
           <p className="text-xl text-green-600">
-            <strong>Total Registrations:</strong> {totalRegistrations}
+            <strong>Total Registrations:</strong> {marathon?.totalRegistrationCount}
           </p>
         </div>
 
         {/* Registration Status */}
         <div className="mt-6 text-center">
           {isOngoing ? (
-            <button
-              onClick={handleRegister}
-              className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
-            >
-              Register Now
-            </button>
+          <Link to={`/applyPage/${marathon?._id}`}>  <button
+          onClick={handleRegister}
+          className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
+        >
+          Register Now
+        </button></Link>
           ) : (
             <p className="text-red-500 font-semibold">Registration is not open yet.</p>
           )}
