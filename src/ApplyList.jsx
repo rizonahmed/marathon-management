@@ -5,93 +5,97 @@ import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet';
 
 const ApplyList = () => {
-    const { user } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);  
     const [applications, setApplications] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [searchTerm, setSearchTerm] = useState('');  
 
-    useEffect(() => {
-        if (!user) {
-            setError('User is not logged in');
-            setLoading(false);
-            return;
-        }
-
+     useEffect(() => {
         const fetchApplications = async () => {
-            try {
-                const response = await axios.get(`http://localhost:5000/applyList?email=${user?.email}`);
-                setApplications(response.data);
+            if (!user) {
+                setError('User is not logged in');
                 setLoading(false);
+                return;
+            }
+
+            try {
+                const response = await axios.get(`http://localhost:5000/applyList?email=${user?.email}&search=${searchTerm}`);
+                setApplications(response.data);
+                setError(null);  
             } catch (error) {
                 console.error('Error fetching applications:', error);
                 setError('Failed to fetch applications');
+            } finally {
+                setLoading(false);
             }
         };
 
         fetchApplications();
-    }, [user]);
+    }, [user, searchTerm]);  
 
     const handleUpdate = async (id) => {
-        try {
-            const updatedStatus = prompt('Enter the new status:');
-            if (!updatedStatus) return;
+        const updatedStatus = prompt('Enter the new status:');
+        if (!updatedStatus) return;
 
+        try {
             const response = await axios.put(`http://localhost:5000/applications/${id}`, {
                 status: updatedStatus,
             });
-
-            setApplications(applications.map(app => app._id === id ? response.data : app));
-            alert('Application updated successfully!');
+            setApplications(applications.map(app => (app._id === id ? response.data : app)));
+            Swal.fire('Success!', 'Application updated successfully.', 'success');
         } catch (error) {
             console.error('Error updating application:', error);
-            alert('Failed to update application.');
+            Swal.fire('Error!', 'Failed to update application.', 'error');
         }
     };
 
+    // Handle application deletion
     const deleteData = (id) => {
         Swal.fire({
-            title: "Are you sure?",
+            title: 'Are you sure?',
             text: "You won't be able to revert this!",
-            icon: "warning",
+            icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!",
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!',
         }).then((result) => {
             if (result.isConfirmed) {
                 axios
                     .delete(`http://localhost:5000/deleted/${id}`)
                     .then(() => {
-                        Swal.fire({
-                            title: "Deleted!",
-                            text: "Your file has been deleted.",
-                            icon: "success",
-                        });
-
-                        setApplications(applications.filter((app) => app._id !== id));
+                        Swal.fire('Deleted!', 'Your application has been deleted.', 'success');
+                        setApplications(applications.filter(app => app._id !== id));
                     })
                     .catch((error) => {
-                        console.error("Error deleting application:", error);
-                        Swal.fire("Error!", "Failed to delete the application.", "error");
+                        console.error('Error deleting application:', error);
+                        Swal.fire('Error!', 'Failed to delete the application.', 'error');
                     });
             }
         });
     };
 
-
-
-    if (loading) return <div className='text-center text-gray-700 text-3xl'> <span className="loading loading-ring loading-lg text-lime-600"></span> </div>
-
+    if (loading) return <div className="text-center text-gray-700 text-3xl"><span className="loading loading-ring loading-lg text-lime-600"></span></div>;
     if (error) return <div className="text-red-600">{error}</div>;
 
     return (
         <div className="container mx-auto mb-20 p-6">
-
             <Helmet>
-                <title> ApplyList/Champion Marathons</title>
+                <title>Apply List / Champion Marathons</title>
             </Helmet>
 
             <h2 className="text-center text-3xl font-semibold mb-6">My Apply List</h2>
+
+            <div className="mb-6">
+                <input
+                    type="text"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}  
+                    placeholder="Search by marathon title..."
+                    className="w-full p-3 border rounded-md"
+                />
+            </div>
 
             <div className="overflow-x-auto rounded-lg shadow-lg">
                 <table className="min-w-full table-auto bg-white rounded-lg overflow-hidden shadow-md">
@@ -99,7 +103,7 @@ const ApplyList = () => {
                         <tr>
                             <th className="py-3 px-6 text-center">#</th>
                             <th className="py-3 px-6 text-center">Marathon Title</th>
-                            <th className="py-3 px-6 text-center"> Start Date</th>
+                            <th className="py-3 px-6 text-center">Start Date</th>
                             <th className="py-3 px-6 text-center">Actions</th>
                         </tr>
                     </thead>
@@ -112,7 +116,7 @@ const ApplyList = () => {
                                     <td className="py-3 px-6 text-center">{new Date(application.marathonStartDate).toLocaleDateString()}</td>
                                     <td className="py-3 px-6 text-center">
                                         <button
-                                            className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-200"
+                                            className="bg-blue-500 mb-2 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-200"
                                             onClick={() => handleUpdate(application._id)}
                                         >
                                             Update
