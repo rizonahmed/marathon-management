@@ -24,6 +24,59 @@ const Nav = () => {
             });
     };
 
+
+    // <> 
+    // <button
+    // className="btn btn-sm  ml-2"
+    // onClick={toggleTheme}
+    // aria-label="Toggle Theme"
+    // >
+    // {theme === "light" ? (
+    //     <span>🌙 Dark</span>
+    // ) : (
+    //     <span>☀️ Light</span>
+    // )}
+    // </button>
+    // </>
+
+
+    // const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+    // useEffect(() => {
+    //   document.documentElement.setAttribute("data-theme", theme);
+    //   localStorage.setItem("theme", theme);
+    // }, [theme]);
+  
+    // const toggleTheme = () => {
+    //   setTheme(theme === "light" ? "dark" : "light");
+    // };
+
+    // daisyui: {
+    //     themes: [
+    //       {
+    //         light: {
+    //           primary: "#3b82f6",
+    //           secondary: "#f6d860",
+    //           accent: "#37cdbe",
+    //           neutral: "#3d4451",
+    //           "base-100": "#ffffff",
+    //         },
+    //         dark: {
+    //           primary: "#1e3a8a",
+    //           secondary: "#d97706",
+    //           accent: "#22d3ee",
+    //           neutral: "#1f2937",
+    //           "base-100": "#121212",
+    //         },
+    //       },
+    //     ],
+    //   }
+
+
+
+
+
+
     return (
         <div className='sticky top-0 z-10 bg-white border-b'>
             <div className="navbar md:w-11/12 mx-auto">

@@ -43,10 +43,10 @@ const ApplyPage = () => {
         };
 
         try {
-            const response = await axios.post("http://localhost:5000/applyList", registrationData);
+            const response = await axios.post("http://localhost:5000/applyList", registrationData, {withCredentials:true});
 
             if (response.status === 200) {
-                const res = await axios.patch(`http://localhost:5000/applyListIncrement/${marathon._id}`);
+                const res = await axios.patch(`http://localhost:5000/applyListIncrement/${marathon._id}`, {withCredentials:true});
                 const data = await res.data
                 console.log('patch api data', data)
                 Swal.fire({

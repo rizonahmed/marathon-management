@@ -21,7 +21,7 @@ const MarathonList = () => {
 
         const fetchMarathons = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/myMarathons?email=${user?.email}`);
+                const response = await axios.get(`http://localhost:5000/myMarathons?email=${user?.email}`, {withCredentials:true});
                 setMarathons(response.data);
                 setLoading(false);
             } catch (error) {
@@ -51,7 +51,7 @@ const MarathonList = () => {
         }).then((result) => {
 
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/delete/${id}`)
+                axios.delete(`http://localhost:5000/delete/${id}`, {withCredentials:true})
                     .then(() => {
                         Swal.fire({
                             title: "Deleted!",
@@ -73,17 +73,22 @@ const MarathonList = () => {
 
 
     const handleModalSubmit = async (updatedMarathon) => {
+        const {_id, ...rest} = updatedMarathon
+        // console.log(rest);
         try {
             const res = await axios.put(
-                `http://localhost:5000/myMarathons/${updatedMarathon}`,
-                updatedMarathon
-            );
+                `http://localhost:5000/marathons/${updatedMarathon?._id}`,
+                rest
+            , {withCredentials:true});
+            const data = await res?.data
+
             setMarathons(
                 marathons.map(marathon =>
                     marathon._id === updatedMarathon._id ? updatedMarathon : marathon
                 )
             );
             setIsModalOpen(false);
+             Swal.fire('Success!', 'Details updated successfully.', 'success');
         } catch (error) {
             console.error('Error updating marathon:', error);
         }

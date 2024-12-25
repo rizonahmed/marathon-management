@@ -89,7 +89,7 @@ const Home = () => {
                                         <span style={{ fontWeight: 'bold' }}>
                                             <Typewriter
                                                 words={['Join the Marathon Today']}
-                                                loop={5}
+                                                loop={Infinity}
                                                 cursor
                                                 cursorStyle="_"
                                                 typeSpeed={70}
@@ -105,14 +105,14 @@ const Home = () => {
 
                                     {/* Conditional rendering of the button based on user state */}
                                     {user ?
-                                        <Link to="">
-                                            <button className="btn bg-gradient-to-r from-gray-600 to-teal-500 text-white font-bold text-base">
+                                        <Link to="/marathons">
+                                            <button className="btn bg-gradient-to-r from-gray-600 to-teal-500 hover:from-teal-500 hover:to-gray-600 text-white font-bold text-base">
                                                 See Campaign
                                             </button>
                                         </Link>
                                         :
                                         <Link to="/register">
-                                            <button className="btn bg-gradient-to-r from-teal-500 to-gray-700 text-white font-bold text-base">
+                                            <button className="btn bg-gradient-to-r from-gray-600 to-teal-500 hover:from-teal-500 hover:to-gray-600 text-white font-bold text-base">
                                                 Sign Up Now
                                             </button>
                                         </Link>
@@ -159,9 +159,9 @@ const Home = () => {
                                 {
                                     user ?
 
-                                        <Link to=""> <button className="btn bg-gradient-to-r from-gray-600 to-teal-500 text-white font-bold text-base">
+                                        <Link to=""> <button className="btn bg-gradient-to-r from-gray-600 to-teal-500 hover:from-teal-500 hover:to-gray-600 text-white font-bold text-base">
                                             See Campaign </button> </Link>
-                                        : <Link to="/register"><button className="btn bg-gradient-to-r from-teal-500 to-gray-700 text-white font-bold text-base">
+                                        : <Link to="/register"><button className="btn bg-gradient-to-r from-gray-600 to-teal-500 hover:from-teal-500 hover:to-gray-600 text-white  font-bold text-base">
                                             Sign Up Now
                                         </button> </Link>
                                 }
@@ -205,9 +205,9 @@ const Home = () => {
                                 {
                                     user ?
 
-                                        <Link to=""> <button className="btn bg-gradient-to-r from-gray-600 to-teal-500 text-white font-bold text-base">
+                                        <Link to=""> <button className="btn bg-gradient-to-r from-gray-600 to-teal-500 hover:from-teal-500 hover:to-gray-600 text-white font-bold text-base">
                                             See Campaign </button> </Link>
-                                        : <Link to="/register"><button className="btn bg-gradient-to-r from-teal-500 to-gray-700 text-white font-bold text-base">
+                                        : <Link to="/register"><button className="btn bg-gradient-to-r from-gray-600 to-teal-500 hover:from-teal-500 hover:to-gray-600 text-white font-bold text-base">
                                             Sign Up Now
                                         </button> </Link>
                                 }
@@ -250,9 +250,9 @@ const Home = () => {
                                 {
                                     user ?
 
-                                        <Link to=""> <button className="btn bg-gradient-to-r from-gray-600 to-teal-500 text-white font-bold text-base">
+                                        <Link to=""> <button className="btn bg-gradient-to-r from-gray-600 to-teal-500 hover:from-teal-500 hover:to-gray-600 text-white font-bold text-base">
                                             See Campaign </button> </Link>
-                                        : <Link to="/register"><button className="btn bg-gradient-to-r from-teal-500 to-gray-700 text-white font-bold text-base">
+                                        : <Link to="/register"><button className="btn bg-gradient-to-r from-gray-600 to-teal-500 hover:from-teal-500 hover:to-gray-600 text-white font-bold text-base">
                                             Sign Up Now
                                         </button> </Link>
                                 }
@@ -296,7 +296,7 @@ const Home = () => {
                                     {new Date(marathon.registrationStartDate).toLocaleDateString()} -{' '}
                                     {new Date(marathon.registrationEndDate).toLocaleDateString()}
                                 </p>
-                                <Link to={`/details/${marathon._id}`}><button className="mt-4 w-full  bg-gradient-to-r from-gray-600 to-teal-500 text-white py-2 rounded-lg hover:bg-green-700 transition-shadow hover:shadow-md">
+                                <Link to={`/details/${marathon._id}`}><button className="mt-4 w-full  bg-gradient-to-r from-gray-600 to-teal-500 hover:from-teal-500 hover:to-gray-600 text-white py-2 rounded-lg hover:bg-green-700 transition-shadow hover:shadow-md">
                                     See Details
                                 </button></Link>
                             </div>

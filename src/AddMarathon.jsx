@@ -34,7 +34,7 @@ const AddMarathon = () => {
             email:user?.email
         };
 
-        axios.post('http://localhost:5000/allMarathons', marathonDetails)
+        axios.post('http://localhost:5000/allMarathons', marathonDetails, {withCredentials:true})
             .then((result) => {
                 Swal.fire({
                     title: "Good job Marathon Added Successfully!",

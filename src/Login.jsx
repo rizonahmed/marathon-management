@@ -6,6 +6,7 @@ import { FaGoogle } from "react-icons/fa";
 import Lottie from "lottie-react";
 import LoginAnimation from "./assets/login.json";
 import { Helmet } from "react-helmet";
+import { Typewriter } from "react-simple-typewriter";
 
 const Login = () => {
     const { signInUser, googleSignIn } = useContext(AuthContext);
@@ -70,7 +71,21 @@ const Login = () => {
                 }}
             >
                 <form onSubmit={handleLogin} className="card-body">
-                    <p className="text-3xl font-bold text-center text-black">Login now</p>
+                    <p className="text-3xl font-bold text-center text-black">
+                         <h1 className="mb-5 text-5xl font-bold ">
+                                                                <span style={{ fontWeight: 'bold' }}>
+                                                                    <Typewriter
+                                                                        words={['Login Please']}
+                                                                        loop={Infinity}
+                                                                        cursor
+                                                                        cursorStyle="_"
+                                                                        typeSpeed={70}
+                                                                        deleteSpeed={40}
+                                                                        delaySpeed={1000}
+                                                                    />
+                                                                </span>
+                                                            </h1>
+                    </p>
 
                     <div className="form-control">
                         <label className="label">

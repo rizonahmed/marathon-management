@@ -1,22 +1,24 @@
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react';
 import { auth } from './firebase.init';
+import toast from 'react-hot-toast';
+import axios from 'axios';
 
 export const AuthContext = createContext(null)
 const googleProvider = new GoogleAuthProvider()
 
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-    const[isDark,setIsDark]=useState(true)
+    const [isDark, setIsDark] = useState(true)
 
     const createUser = (email, password) => {
         setLoading(true)
-    return createUserWithEmailAndPassword(auth, email, password)
+        return createUserWithEmailAndPassword(auth, email, password)
     }
 
-    const signInUser =(email, password)=> {
+    const signInUser = (email, password) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
@@ -31,17 +33,62 @@ const AuthProvider = ({children}) => {
     }
 
 
-    useEffect(()=> {
-      const unSubscribe = onAuthStateChanged(auth, currentUser =>{
-        setUser(currentUser)
-        setLoading(false)
-      })
+    useEffect(() => {
+        const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
 
-      return () => {
-        unSubscribe();
-      }
+            if (currentUser?.email) {
+                const userInfo = { email: currentUser.email };
+                console.log(userInfo);
 
-    } ,[])
+                try {
+                    const fetchData = async () => {
+                        const res = await axios.post(
+                            'http://localhost:5000/create-token',
+                            userInfo,
+                            { withCredentials: true }  
+                        );
+                        const data = await res.data;
+                        console.log('Create token response from server:', data);
+                        setLoading(false);
+                    };
+                    fetchData();
+                } catch (err) {
+                    console.error(err);
+                    toast.error(err.message);
+                }
+            } else {
+                try {
+                    const fetchData = async () => {
+                        const res = await axios.post(
+                            'http://localhost:5000/logout',
+                            {},
+                            { withCredentials: true }  
+                        );
+                        const data = await res.data;
+                        console.log('Logout response from server:', data);
+
+                        if (data.success) {
+                            console.log('Successfully logged out');
+                            setUser(null);
+                            setLoading(false);
+                        } else {
+                            console.error('Logout failed');
+                            toast.error('Failed to log out');
+                        }
+                    };
+                    fetchData();
+                } catch (err) {
+                    console.error(err);
+                    toast.error(err.message);
+                }
+            }
+        });
+
+        return () => {
+            unSubscribe();
+        };
+    }, []);
 
 
 
@@ -50,10 +97,10 @@ const AuthProvider = ({children}) => {
         user,
         isDark,
         setIsDark,
-      createUser,
-      signInUser,
-      googleSignIn,
-      signOutUser
+        createUser,
+        signInUser,
+        googleSignIn,
+        signOutUser
 
     }
 

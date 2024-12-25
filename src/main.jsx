@@ -25,6 +25,9 @@ import ApplyPage from './ApplyPage.jsx';
 import About from './About.jsx';
 import Services from './Services.jsx';
 
+import { Toaster } from 'react-hot-toast';
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,7 +37,7 @@ errorElement:<Error></Error>,
       {
         path: '/',
         element:<Home></Home>,
-        loader: ()=> fetch('http://localhost:5000/limitedData')
+        loader: ()=> fetch('http://localhost:5000/limitedData' ,{credentials: 'include'})
       },
       {
         path: '/marathons',
@@ -59,12 +62,12 @@ errorElement:<Error></Error>,
       {
          path: '/details/:id',
          element: <Private><Details></Details></Private>,
-         loader: ({ params }) =>  fetch(`http://localhost:5000/allMarathons/${params.id}`)
+         loader: ({ params }) =>  fetch(`http://localhost:5000/allMarathons/${params.id}`, {credentials: 'include'})
       },
       {
         path:'/applyPage/:id',
         element:<Private><ApplyPage></ApplyPage></Private>,
-        loader: ({ params }) =>  fetch(`http://localhost:5000/allMarathons/${params.id}`)
+        loader: ({ params }) =>  fetch(`http://localhost:5000/allMarathons/${params.id}` , {credentials: 'include'})
       },
       {
       path: '/dashboard',
@@ -92,6 +95,9 @@ errorElement:<Error></Error>,
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-     <AuthProvider><RouterProvider router={router} /> </AuthProvider>
+     <AuthProvider>
+      <RouterProvider router={router} /> 
+      <Toaster />
+      </AuthProvider>
   </StrictMode>,
 )

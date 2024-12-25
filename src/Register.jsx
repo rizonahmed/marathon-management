@@ -9,6 +9,7 @@ import { FaGoogle } from "react-icons/fa";
 import Lottie from "lottie-react";
 import registerAnimation from "./assets/register.json";
 import { Helmet } from "react-helmet";
+import { Typewriter } from "react-simple-typewriter";
 
 const Register = () => {
     const navigate = useNavigate();
@@ -56,36 +57,7 @@ const Register = () => {
                 };
                 updateProfile(auth.currentUser, profile)
                     .then(() => { })
-                    .catch((error) => { });
-
-                const newUser = { email, name };
-                fetch(`https://funding-application-server.vercel.app/users`, {
-                    method: "POST",
-                    headers: {
-                        "content-type": "application/json",
-                    },
-                    body: JSON.stringify(newUser),
-                })
-                    .then(() => { })
-                    .catch((error) => { });
-
-                form.reset();
-                Swal.fire({
-                    title: "Register Successfully!",
-                    text: "Wait a moment!",
-                    icon: "success",
-                });
-
-                setTimeout(() => {
-                    navigate("/");
-                }, 2000);
-            })
-            .catch((error) => {
-                Swal.fire({
-                    icon: "error",
-                    title: "Register Failed",
-                    text: error.message,
-                });
+                    .catch((error) => { })
             });
     };
 
@@ -111,7 +83,7 @@ const Register = () => {
             </Helmet>
 
             <div
-                className="card w-full max-w-md shadow-2xl bg-gray-200 p-1"
+                className="card w-full max-w-lg shadow-2xl bg-gray-200 p-1"
                 style={{
                     backdropFilter: "blur(12px)",
                     borderRadius: "15px",
@@ -119,8 +91,20 @@ const Register = () => {
                 }}
             >
                 <form onSubmit={handleRegister} className="card-body">
-                    <p className="text-3xl font-bold text-center text-black">
-                        Register Now
+                    <p className="text-3xl font-bold text-center ">
+                        <h1 className="mb-5 text-4xl font-bold ">
+                            <span style={{ fontWeight: 'bold' }}>
+                                <Typewriter
+                                    words={['Register  Please']}
+                                    loop={Infinity}
+                                    cursor
+                                    cursorStyle="_"
+                                    typeSpeed={70}
+                                    deleteSpeed={40}
+                                    delaySpeed={1000}
+                                />
+                            </span>
+                        </h1>
                     </p>
                     <div className="form-control">
                         <label className="label">
