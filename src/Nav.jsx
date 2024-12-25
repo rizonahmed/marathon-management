@@ -8,7 +8,6 @@ import { Tooltip } from 'react-tooltip';
 
 const Nav = () => {
     const { user, signOutUser } = useContext(AuthContext);
-    console.log(user);
 
     const handleSignOut = () => {
         signOutUser()
@@ -20,7 +19,6 @@ const Nav = () => {
                 });
             })
             .catch((error) => {
-                console.error('Error signing out:', error);
             });
     };
 

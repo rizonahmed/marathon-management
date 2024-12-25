@@ -1,8 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Typewriter } from 'react-simple-typewriter'
 import { AuthContext } from './AuthProvider';
 import { Link, useLoaderData } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import AOS from "aos"
+import "aos/dist/aos.css"
+
 
 const Home = () => {
     const cards = useLoaderData()
@@ -12,7 +15,6 @@ const Home = () => {
     const togglePlan = () => {
         setIsYearly(!isYearly);
     };
-
 
     const marathons = [
         {
@@ -65,10 +67,14 @@ const Home = () => {
         },
     ];
 
+    useEffect(() => {
+        AOS.init();
+    }, []);
+
     return (
         <div>
 
-              <Helmet>
+            <Helmet>
                 <title>Home/Champion Marathons</title>
             </Helmet>
 
@@ -82,7 +88,7 @@ const Home = () => {
                         }}>
                         <div className="hero-overlay bg-opacity"></div>
 
-                        <div className="animation-wrapper hit bit">
+                        <div className="animation-wrapper hit bit" data-aos="zoom-in-down">
                             <div className="anim-name bg-[#0000007e] hero-content text-neutral-content text-center py-8 px-10 mx-5 md:mx-0 hit cardd">
                                 <div className="max-w-md">
                                     <h1 className="mb-5 text-5xl font-bold text-white">
@@ -135,7 +141,7 @@ const Home = () => {
                             backgroundImage: "url(https://hips.hearstapps.com/hmg-prod/images/race-day-1656663170.jpg)",
                         }}>
                         <div className="hero-overlay bg-opacity"></div>
-                        <div className="card bg-[#0000007e] hero-content text-neutral-content text-center py-8 px-10 mx-5 md:mx-0 fit cart">
+                        <div className="card bg-[#0000007e] hero-content text-neutral-content text-center py-8 px-10 mx-5 md:mx-0 fit cart" data-aos="zoom-in-down">
                             <div className="max-w-md">
 
                                 <h1 className="mb-5 text-5xl font-bold">
@@ -182,7 +188,7 @@ const Home = () => {
                             backgroundImage: "url(https://images.ctfassets.net/rxqefefl3t5b/6dbXz640rx6vIpNvF8I7p8/ff31b647ee9c5d938b3bb71ff15cdbfa/85210416_10157583299184748_8441948264000913408_o.jpg?fl=progressive&q=80)",
                         }}>
                         <div className="hero-overlay bg-opacity-60"></div>
-                        <div className="card bg-[#0000007e] hero-content text-neutral-content text-center mx-5 md:mx-0 py-8 px-10 hit cardd">
+                        <div className="card bg-[#0000007e] hero-content text-neutral-content text-center mx-5 md:mx-0 py-8 px-10 hit cardd" data-aos="zoom-in-down">
                             <div className="max-w-md">
 
                                 <h1 className="mb-5 text-5xl font-bold">
@@ -228,7 +234,7 @@ const Home = () => {
                             backgroundImage: "url(https://marathontours.com/wp-content/uploads/sites/2/2024/07/ANA09629-scaled.jpg)",
                         }}>
                         <div className="hero-overlay bg-opacity"></div>
-                        <div className="card bg-[#0000007e] hero-content text-neutral-content text-center mx-5 md:mx-0 py-8 px-10 fit cart">
+                        <div className="card bg-[#0000007e] hero-content text-neutral-content text-center mx-5 md:mx-0 py-8 px-10 fit cart" data-aos="zoom-in-down">
                             <div className="max-w-md">
 
                                 <h1 className="mb-5 text-5xl font-bold">
@@ -270,11 +276,13 @@ const Home = () => {
 
 
 
-            <div className="w-11/12 lg:w-10/12 mx-auto my-12 p-6">
+            <div className="w-11/12 lg:w-10/12 mx-auto my-12 p-6"   >
                 <h2 className="text-4xl font-extrabold text-center  mb-8">Apply Here Just Now</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {cards.map((marathon) => (
                         <div
+                            data-aos="fade-up"
+                            data-aos-duration="3000"
                             key={marathon._id}
                             className="bg-white border rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-300 overflow-hidden"
                         >
@@ -311,7 +319,10 @@ const Home = () => {
                     Upcoming Marathons
                 </h2>
                 <div className="grid grid-cols-1 gap-8">
-                    <div className="bg-slate-100 flex items-center border rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div className="bg-slate-100 flex items-center border rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300"
+                    data-aos="fade-right"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine">
                         <img
                             src="https://cms-in.musafir.com/uploads/9_Marathons_in_India_that_you_must_run_at_least_once_in_your_lifetime_671eb2c549.png"
                             alt="Marathon"
@@ -330,7 +341,10 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="bg-slate-100 flex items-center border rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div className="bg-slate-100 flex items-center border rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300"
+                     data-aos="fade-left"
+                     data-aos-offset="300"
+                     data-aos-easing="ease-in-sine">
                         <img
                             src="https://s3.ap-southeast-1.amazonaws.com/images.asianage.com/images/aa-Cover-6g98slub5mf36hjul7r8te5lu6-20180808222136.Medi.jpeg"
                             alt="Marathon"
@@ -349,7 +363,10 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className=" bg-slate-100 flex items-center border rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div className=" bg-slate-100 flex items-center border rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300"
+                    data-aos="fade-right"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine">
                         <img
                             src="https://thebridge.in/wp-content/uploads/2020/10/A-still-from-Airtel-Delhi-Half-Marathon.jpg"
                             alt="Marathon"
@@ -368,7 +385,10 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="bg-slate-100 flex items-center border rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div className="bg-slate-100 flex items-center border rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300"
+                     data-aos="fade-left"
+                     data-aos-offset="300"
+                     data-aos-easing="ease-in-sine">
                         <img
                             src="https://mybestruns.com/photo/1277.jpg?ver=1539617670"
                             alt="Marathon"
@@ -387,7 +407,10 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="bg-slate-100 flex items-center border rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div className="bg-slate-100 flex items-center border rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300"
+                    data-aos="fade-right"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine">
                         <img
                             src="https://www.nathanflear.co.uk/wp-content/uploads/2024/08/running-in-india-indian-runners.jpg"
                             alt="Marathon"
@@ -406,7 +429,10 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="bg-slate-100 flex items-center border rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div className="bg-slate-100 flex items-center border rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300"
+                    data-aos="fade-left"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine">
                         <img
                             src="https://media.licdn.com/dms/image/D4D12AQEA1k9BEpifpA/article-cover_image-shrink_720_1280/0/1714468261700?e=2147483647&v=beta&t=Z7C1FPBNn_Oxsv6z2Re4jk92nPra-To9nYpQTV9h99A"
                             alt="Marathon"
@@ -435,23 +461,37 @@ const Home = () => {
 
                         <div className="grid grid-cols-2 gap-4">
                             <img
+                             data-aos="fade-left"
+                             data-aos-offset="300"
+                             data-aos-easing="ease-in-sine"
+
                                 src="https://media.istockphoto.com/id/1300123069/photo/runners-running-towards-the-finish-line.jpg?s=612x612&w=0&k=20&c=XNlsYwQWlHHIlNYaxLuJU-YrD46ZTdPh9WWQpOt6Z60="
                                 alt="Running group 1"
                                 className="rounded-lg shadow-lg w-full h-full object-cover"
                             />
                             <img
+                             data-aos="fade-right"
+                             data-aos-offset="300"
+                             data-aos-easing="ease-in-sine"
                                 src="https://t4.ftcdn.net/jpg/07/99/70/25/360_F_799702562_A7t9cKYyK0l1E1ymOM9nAYacx5OOI4gB.jpg"
                                 alt="Running group 2"
                                 className="rounded-lg shadow-lg w-full h-full object-cover"
                             />
                             <img
+                             data-aos="fade-left"
+                             data-aos-offset="300"
+                             data-aos-easing="ease-in-sine"
                                 src="https://static.vecteezy.com/system/resources/thumbnails/036/114/878/small_2x/ai-generated-multiethnic-group-of-people-running-in-the-city-on-a-sunny-day-ai-generated-free-photo.jpg"
                                 alt="Running group 3"
                                 className="rounded-lg shadow-lg w-full h-full object-cover col-span-2"
                             />
                         </div>
 
-                        <div className="flex flex-col justify-center">
+                        <div className="flex flex-col justify-center" 
+                         data-aos="fade-left"
+                         data-aos-offset="300"
+                         data-aos-easing="ease-in-sine">
+
                             <p className="text-sm text-green-600 font-semibold uppercase mb-2">
                                 About Our Program
                             </p>
@@ -465,7 +505,9 @@ const Home = () => {
                                 blend of challenge and support.
                             </p>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                             >
+
                                 <div className="flex items-center space-x-4">
                                     <div className="text-green-600 text-4xl">
                                         <svg
@@ -513,7 +555,11 @@ const Home = () => {
             </section>
 
 
-            <section className="py-16 ">
+            <section className="py-16 "
+            data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="2000">
+
                 <div className="container mx-auto px-6 lg:px-20">
                     <div className="text-center mb-12">
                         <p className="text-green-600 font-semibold text-lg">Simple Pricing</p>

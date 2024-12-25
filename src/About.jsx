@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Typewriter } from 'react-simple-typewriter';
+import AOS from "aos"
+import "aos/dist/aos.css"
 
 const About = () => {
+    useEffect(() => {
+                AOS.init();
+            }, []);
     return (
         <div>
 
@@ -10,7 +15,9 @@ const About = () => {
                 <title>About/Champion Marathons</title>
             </Helmet>
 
-            <div className=" py-16">
+            <div className=" py-16" data-aos="fade-up"
+                            data-aos-duration="3000">
+
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-12">
                         <h1 className="text-4xl font-bold ">
@@ -92,7 +99,8 @@ const About = () => {
                 </div>
             </div>
 
-            <section className="bg-gray-300 py-16">
+            <section className="bg-gray-300 py-16" data-aos="fade-up"
+                            data-aos-duration="3000">
                 <div className="container mx-auto flex  flex-col md:flex-row items-center gap-12 md:gap-20 px-6 lg:px-20">
                     <div className="md:w-1/2">
                         <h2 className="text-3xl lg:text-4xl font-bold text-black mb-4">
@@ -117,7 +125,8 @@ const About = () => {
                 </div>
             </section>
 
-            <div className="container mx-auto my-16 px-6">
+            <div className="container mx-auto my-16 px-6" data-aos="fade-up"
+                            data-aos-duration="3000">
                 <div className="text-center mb-10">
                     <h1 className="text-4xl font-bold ">About Us</h1>
                     <p className="text-lg  mt-4">

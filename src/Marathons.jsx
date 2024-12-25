@@ -4,30 +4,34 @@ import { Helmet } from 'react-helmet';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { Link, useNavigate } from 'react-router-dom';
 import { Typewriter } from 'react-simple-typewriter';
+import AOS from "aos"
+import "aos/dist/aos.css"
 
 const Marathons = () => {
     const [marathons, setMarathons] = useState([]);
-    const [sortOrder, setSortOrder] = useState('asc');  // Default sorting order
+    const [sortOrder, setSortOrder] = useState('asc');   
     const navigate = useNavigate();
 
-    // Fetch marathons based on the selected sort order
     useEffect(() => {
-        axios.get(`http://localhost:5000/allMarathons?sortOrder=${sortOrder}` , {withCredentials:true})
+        axios.get(`http://localhost:5000/allMarathons?sortOrder=${sortOrder}`, { withCredentials: true })
             .then((response) => {
                 setMarathons(response.data);
             })
             .catch((error) => {
-                console.error('Error fetching marathons:', error.message);
             });
-    }, [sortOrder]);  // Re-fetch when the sortOrder changes
+    }, [sortOrder]);  
 
     const handleSortChange = (e) => {
-        setSortOrder(e.target.value);  // Update the sort order based on user selection
+        setSortOrder(e.target.value);  
     };
 
     const handleSeeDetails = (id) => {
         navigate(`/marathons/${id}`);
     };
+      useEffect(() => {
+            AOS.init();
+        }, []);
+    
 
     return (
         <div className="my-10 w-11/12 mx-auto md:w-9/12">
@@ -72,7 +76,9 @@ const Marathons = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {marathons.map((marathon) => (
-                    <div key={marathon._id} className="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <div key={marathon._id} className="bg-white shadow-lg rounded-lg overflow-hidden"
+                        data-aos="fade-up"
+                        data-aos-anchor-placement="bottom-bottom">
                         <img
                             src={marathon.marathonImageUrl}
                             alt={marathon.marathonTitle}

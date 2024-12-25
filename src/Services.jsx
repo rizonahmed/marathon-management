@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Typewriter } from 'react-simple-typewriter';
+import AOS from "aos"
+import "aos/dist/aos.css"
 
 const Services = () => {
+      useEffect(() => {
+            AOS.init();
+        }, []);
+    
     return (
         <div className="py-12">
 
             <Helmet>
                 <title>Services/Champion Marathons</title>
             </Helmet>
-            <div className="container mx-auto px-6 lg:px-20">
+            <div className="container mx-auto px-6 lg:px-20"
+            >
                 <h2 className="text-4xl font-semibold text-center  mb-10">
                     <h1 className="mb-5 text-5xl font-bold ">
                         <span style={{ fontWeight: 'bold' }}>
@@ -26,7 +33,8 @@ const Services = () => {
                     </h1>
                 </h2>
 
-                <div className="flex flex-col lg:flex-row items-center mb-16 ">
+                <div className="flex flex-col lg:flex-row items-center mb-16 "
+                data-aos="fade-right">
                     <div className="lg:w-1/2 mb-6 lg:mb-0">
                         <h3 className="text-3xl font-bold  mb-4">Marathon Management</h3>
                         <p className=" text-lg">
@@ -45,7 +53,8 @@ const Services = () => {
                     </div>
                 </div>
 
-                <div className="flex gap-5 flex-col-reverse lg:flex-row items-center mb-16">
+                <div className="flex gap-5 flex-col-reverse lg:flex-row items-center mb-16"
+               data-aos="fade-left">
                     <div className="lg:w-1/2 flex justify-center">
                         <img
                             src="https://loghicconnect.com.au/wp-content/uploads/2017/07/shutterstock_1085354081-e1549484623497.jpg"
@@ -64,7 +73,8 @@ const Services = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-col lg:flex-row items-center">
+                <div className="flex flex-col lg:flex-row items-center"
+                 data-aos="fade-down">
                     <div className="lg:w-1/2 mb-6 lg:mb-0">
                         <h3 className="text-3xl font-bold  mb-4">Data-Driven Insights</h3>
                         <p className=" text-lg">
@@ -84,7 +94,9 @@ const Services = () => {
                 </div>
             </div>
 
-            <div className=" py-16">
+            <div className=" py-16"
+            data-aos="fade-up"
+            data-aos-duration="3000">
                 <div className="container mx-auto px-6 lg:px-20">
                     <h2 className="text-4xl font-bold text-center  mb-12">
                         Why Choose Our Platform
@@ -145,7 +157,8 @@ const Services = () => {
                 </div>
             </div>
 
-            <div className=" py-16">
+            <div className=" py-16" data-aos="fade-up"
+                            data-aos-duration="3000">
                 <div className="container mx-auto px-6 lg:px-20">
                     <h2 className="text-4xl font-semibold text-center  mb-10">
                         What Our Clients Say

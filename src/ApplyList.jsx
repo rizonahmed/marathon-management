@@ -29,7 +29,6 @@ const ApplyList = () => {
                 setLoading(false);
                 setError(null);
             } catch (error) {
-                console.error('Error fetching applications:', error);
                 setError('Failed to fetch applications');
                 setLoading(false);
             }
@@ -68,7 +67,6 @@ const ApplyList = () => {
     
             Swal.fire('Success!', 'Details updated successfully.', 'success');
         } catch (error) {
-            console.error('Error updating application:', error);
             Swal.fire('Error!', 'Failed to update details.', 'error');
         }
     };
@@ -91,7 +89,6 @@ const ApplyList = () => {
                         Swal.fire('Deleted!', 'Your registration has been removed.', 'success');
                     })
                     .catch((error) => {
-                        console.error('Error deleting application:', error);
                         Swal.fire('Error!', 'Failed to delete the registration.', 'error');
                     });
             }

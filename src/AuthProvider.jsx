@@ -39,7 +39,6 @@ const AuthProvider = ({ children }) => {
 
             if (currentUser?.email) {
                 const userInfo = { email: currentUser.email };
-                console.log(userInfo);
 
                 try {
                     const fetchData = async () => {
@@ -49,12 +48,10 @@ const AuthProvider = ({ children }) => {
                             { withCredentials: true }  
                         );
                         const data = await res.data;
-                        console.log('Create token response from server:', data);
                         setLoading(false);
                     };
                     fetchData();
                 } catch (err) {
-                    console.error(err);
                     toast.error(err.message);
                 }
             } else {
@@ -66,20 +63,16 @@ const AuthProvider = ({ children }) => {
                             { withCredentials: true }  
                         );
                         const data = await res.data;
-                        console.log('Logout response from server:', data);
 
                         if (data.success) {
-                            console.log('Successfully logged out');
                             setUser(null);
                             setLoading(false);
                         } else {
-                            console.error('Logout failed');
                             toast.error('Failed to log out');
                         }
                     };
                     fetchData();
                 } catch (err) {
-                    console.error(err);
                     toast.error(err.message);
                 }
             }

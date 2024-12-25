@@ -48,16 +48,16 @@ const Footer = () => {
                     <div className="flex space-x-4 mt-4">
                 
                         <a
-                            href="#"
-                            className="text-gray-700 hover:text-green-800"
+                            href="https://www.facebook.com/profile.php?id=61552156421365" target='blank'
+                            className=" hover:text-green-800"
                             aria-label="Facebook"
                         >
                             <FaFacebook className="w-6 h-6"></FaFacebook>
                         </a>
                      
                         <a
-                            href="#"
-                            className="text-gray-700 hover:text-green-800"
+                            href="https://x.com/RizonAhmed0486" target='blank'
+                            className=" hover:text-green-800"
                             aria-label="Twitter"
                         >
                             <FaTwitter className="w-6 h-6"></FaTwitter>
@@ -65,23 +65,23 @@ const Footer = () => {
                      
                         <a
                             href="#"
-                            className="text-gray-700 hover:text-green-800"
+                            className=" hover:text-green-800"
                             aria-label="Instagram"
                         >
                             <FaInstagram className="w-6 h-6"></FaInstagram>
                         </a>
                    
                         <a
-                            href="#"
-                            className="text-gray-700 hover:text-green-800"
+                            href="https://github.com/rizonahmed" target='blank'
+                            className=" hover:text-green-800"
                             aria-label="GitHub"
                         >
                             <FaGithub className="w-6 h-6"></FaGithub>
                         </a>
                      
                         <a
-                            href="#"
-                            className="text-gray-700 hover:text-green-800"
+                            href="https://www.linkedin.com/in/rizon-ahmed/" target='blank'
+                            className=" hover:text-green-800"
                             aria-label="LinkedIn"
                         >
                             <FaLinkedin className="w-6 h-6"></FaLinkedin>

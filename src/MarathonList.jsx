@@ -25,7 +25,6 @@ const MarathonList = () => {
                 setMarathons(response.data);
                 setLoading(false);
             } catch (error) {
-                console.error('Error fetching marathons:', error);
                 setError('Failed to fetch marathons');
             }
         };
@@ -39,7 +38,6 @@ const MarathonList = () => {
 
 
     const deleteData = (id) => {
-        console.log(id)
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -74,7 +72,6 @@ const MarathonList = () => {
 
     const handleModalSubmit = async (updatedMarathon) => {
         const {_id, ...rest} = updatedMarathon
-        // console.log(rest);
         try {
             const res = await axios.put(
                 `http://localhost:5000/marathons/${updatedMarathon?._id}`,
@@ -90,7 +87,6 @@ const MarathonList = () => {
             setIsModalOpen(false);
              Swal.fire('Success!', 'Details updated successfully.', 'success');
         } catch (error) {
-            console.error('Error updating marathon:', error);
         }
     };
 
