@@ -70,8 +70,9 @@ const ApplyPage = () => {
         }
     };
 
+  
     return (
-        <div className="w-11/12 md:max-w-3xl mx-auto my-12 p-6 border rounded-lg shadow-lg">
+        <div className="w-11/12 md:max-w-3xl mx-auto my-12 p-6 border rounded-lg shadow-lg bg-slate-200">
 
             <Helmet>
                 <title>ApplyPage/Champion Marathons</title>
@@ -88,81 +89,81 @@ const ApplyPage = () => {
 
             <form onSubmit={handleSubmit}>
                 <div className="mb-4">
-                    <label className="block font-semibold text-gray-600 mb-2">Email (Read Only)</label>
+                    <label className="block font-semibold text-black mb-2">Email (Read Only)</label>
                     <input
                         type="email"
                         value={user?.email}
                         readOnly
-                        className="w-full p-3 border rounded-lg bg-gray-100"
+                        className="w-full p-3 border rounded-lg bg-gray-100  text-black"
                     />
                 </div>
 
                 <div className="mb-4">
-                    <label className="block font-semibold text-gray-600 mb-2">Marathon Title (Read Only)</label>
+                    <label className="block font-semibold text-black  mb-2">Marathon Title (Read Only)</label>
                     <input
                         type="text"
                         value={marathon?.marathonTitle}
                         readOnly
-                        className="w-full p-3 border rounded-lg bg-gray-100"
+                        className="w-full p-3 border rounded-lg bg-gray-100 text-black"
                     />
                 </div>
 
                 <div className="mb-4">
-                    <label className="block font-semibold text-gray-600 mb-2">
+                    <label className="block font-semibold text-black  mb-2">
                         Marathon Start Date (Read Only)
                     </label>
                     <input
                         type="text"
                         value={new Date(marathon?.marathonStartDate).toLocaleDateString()}
                         readOnly
-                        className="w-full p-3 border rounded-lg bg-gray-100"
+                        className="w-full p-3 border rounded-lg bg-gray-100 text-black"
                     />
                 </div>
 
                 <div className="mb-4">
-                    <label className="block font-semibold text-gray-600 mb-2">First Name</label>
+                    <label className="block font-semibold text-black  mb-2">First Name</label>
                     <input
                         type="text"
                         name="firstName"
                         value={formData.firstName}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 border rounded-lg"
+                        className="w-full p-3 border rounded-lg text-black"
                     />
                 </div>
 
                 <div className="mb-4">
-                    <label className="block font-semibold text-gray-600 mb-2">Last Name</label>
+                    <label className="block font-semibold text-black  mb-2">Last Name</label>
                     <input
                         type="text"
                         name="lastName"
                         value={formData.lastName}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 border rounded-lg"
+                        className="w-full p-3 border rounded-lg text-black"
                     />
                 </div>
 
                 <div className="mb-4">
-                    <label className="block font-semibold text-gray-600 mb-2">Contact Number</label>
+                    <label className="block font-semibold text-black  mb-2">Contact Number</label>
                     <input
                         type="text"
                         name="contactNumber"
                         value={formData.contactNumber}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 border rounded-lg"
+                        className="w-full p-3 border rounded-lg text-black"
                     />
                 </div>
 
                 <div className="mb-6">
-                    <label className="block font-semibold text-gray-600 mb-2">Additional Info</label>
+                    <label className="block font-semibold  text-black mb-2">Additional Info</label>
                     <textarea
                         name="additionalInfo"
                         value={formData.additionalInfo}
                         onChange={handleChange}
                         rows="4"
-                        className="w-full p-3 border rounded-lg"
+                        className="w-full p-3 border rounded-lg text-black"
                     ></textarea>
                 </div>
 

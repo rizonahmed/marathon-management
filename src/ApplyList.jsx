@@ -98,7 +98,7 @@ const ApplyList = () => {
         });
     };
 
-    if (loading) return <div className="text-center text-gray-700 text-3xl"><span className="loading loading-ring loading-lg text-lime-600"></span></div>;
+    if (loading) return <div className="text-center  text-3xl"><span className="loading loading-ring loading-lg text-lime-600"></span></div>;
     if (error) return <div className="text-red-600">{error}</div>;
 
     return (
@@ -111,12 +111,12 @@ const ApplyList = () => {
 
             <div className="overflow-x-auto rounded-lg shadow-lg">
                 <table className="min-w-full table-auto bg-white rounded-lg overflow-hidden shadow-md">
-                    <thead className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white">
+                    <thead className="bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white">
                         <tr>
-                            <th className="py-3 px-6 text-center">#</th>
-                            <th className="py-3 px-6 text-center">Marathon Title</th>
-                            <th className="py-3 px-6 text-center">Start Date</th>
-                            <th className="py-3 px-6 text-center">Actions</th>
+                            <th className="py-3 px-6 text-center ">#</th>
+                            <th className="py-3 px-6 text-center ">Marathon Title</th>
+                            <th className="py-3 px-6 text-center ">Start Date</th>
+                            <th className="py-3 px-6 text-center ">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -126,9 +126,9 @@ const ApplyList = () => {
                                     key={application._id}
                                     className="hover:bg-gray-100 transition duration-300 ease-in-out border-t border-b"
                                 >
-                                    <td className="py-3 px-6 text-center">{index + 1}</td>
-                                    <td className="py-3 px-6 text-center">{application.marathonTitle}</td>
-                                    <td className="py-3 px-6 text-center">
+                                    <td className="py-3 px-6 text-center text-black">{index + 1}</td>
+                                    <td className="py-3 px-6 text-center text-black">{application.marathonTitle}</td>
+                                    <td className="py-3 px-6 text-center text-black">
                                         {new Date(application.marathonStartDate).toLocaleDateString()}
                                     </td>
                                     <td className="py-3 px-6 text-center">

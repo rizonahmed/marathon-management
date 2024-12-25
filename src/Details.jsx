@@ -50,7 +50,7 @@ const Details = () => {
     const label = isOngoing ? 'Ongoing' : 'Upcoming';
 
     return (
-        <div className="max-w-5xl mx-auto my-12 p-6 border rounded-lg shadow-lg">
+        <div className="max-w-5xl mx-auto my-12 p-6 border rounded-lg shadow-lg bg-slate-300">
 
             <Helmet>
                 <title>Details/Champion Marathons</title>
@@ -71,7 +71,7 @@ const Details = () => {
             </div>
 
             <div className="mt-8">
-                <h1 className="text-4xl font-extrabold text-center mb-4">
+                <h1 className="text-4xl font-extrabold text-black text-center mb-4">
                     {marathon.marathonTitle}
                 </h1>
                 <p className="text-center text-gray-700 text-lg">{marathon.description}</p>

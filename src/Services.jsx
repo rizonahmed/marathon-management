@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { Typewriter } from 'react-simple-typewriter';
 
 const Services = () => {
     return (
@@ -9,14 +10,26 @@ const Services = () => {
                 <title>Services/Champion Marathons</title>
             </Helmet>
             <div className="container mx-auto px-6 lg:px-20">
-                <h2 className="text-4xl font-semibold text-center text-gray-800 mb-10">
-                    Our Services
+                <h2 className="text-4xl font-semibold text-center  mb-10">
+                    <h1 className="mb-5 text-5xl font-bold ">
+                        <span style={{ fontWeight: 'bold' }}>
+                            <Typewriter
+                                words={['Our Services']}
+                                loop={Infinity}
+                                cursor
+                                cursorStyle="_"
+                                typeSpeed={70}
+                                deleteSpeed={50}
+                                delaySpeed={1000}
+                            />
+                        </span>
+                    </h1>
                 </h2>
 
-                <div className="flex flex-col lg:flex-row items-center mb-16">
+                <div className="flex flex-col lg:flex-row items-center mb-16 ">
                     <div className="lg:w-1/2 mb-6 lg:mb-0">
-                        <h3 className="text-3xl font-bold text-gray-800 mb-4">Marathon Management</h3>
-                        <p className="text-gray-600 text-lg">
+                        <h3 className="text-3xl font-bold  mb-4">Marathon Management</h3>
+                        <p className=" text-lg">
                             Simplify marathon planning and execution with our comprehensive management tools.
                             From creating and customizing events to tracking registrations, we provide a seamless
                             experience for event organizers. Let us handle the logistics so you can focus on building
@@ -41,8 +54,8 @@ const Services = () => {
                         />
                     </div>
                     <div className="lg:w-1/2 mb-6 lg:mb-0">
-                        <h3 className="text-3xl font-bold text-gray-800 mb-4">Participant Engagement</h3>
-                        <p className="text-gray-600 text-lg">
+                        <h3 className="text-3xl font-bold  mb-4">Participant Engagement</h3>
+                        <p className=" text-lg">
                             Engage with marathon participants effortlessly. Our platform enables users to
                             explore events, view detailed information, and apply for marathons with ease.
                             Ensure your participants have a smooth and enjoyable experience, from registration
@@ -53,8 +66,8 @@ const Services = () => {
 
                 <div className="flex flex-col lg:flex-row items-center">
                     <div className="lg:w-1/2 mb-6 lg:mb-0">
-                        <h3 className="text-3xl font-bold text-gray-800 mb-4">Data-Driven Insights</h3>
-                        <p className="text-gray-600 text-lg">
+                        <h3 className="text-3xl font-bold  mb-4">Data-Driven Insights</h3>
+                        <p className=" text-lg">
                             Unlock valuable insights with real-time analytics and reporting.
                             Track registrations, monitor event performance, and gather feedback to
                             continuously improve your marathons. Our platform helps you make data-informed
@@ -71,9 +84,9 @@ const Services = () => {
                 </div>
             </div>
 
-            <div className="bg-white py-16">
+            <div className=" py-16">
                 <div className="container mx-auto px-6 lg:px-20">
-                    <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
+                    <h2 className="text-4xl font-bold text-center  mb-12">
                         Why Choose Our Platform
                     </h2>
 
@@ -134,7 +147,7 @@ const Services = () => {
 
             <div className=" py-16">
                 <div className="container mx-auto px-6 lg:px-20">
-                    <h2 className="text-4xl font-semibold text-center text-gray-800 mb-10">
+                    <h2 className="text-4xl font-semibold text-center  mb-10">
                         What Our Clients Say
                     </h2>
 

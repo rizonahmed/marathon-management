@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
 import Swal from 'sweetalert2';
@@ -25,52 +25,19 @@ const Nav = () => {
     };
 
 
-    // <> 
-    // <button
-    // className="btn btn-sm  ml-2"
-    // onClick={toggleTheme}
-    // aria-label="Toggle Theme"
-    // >
-    // {theme === "light" ? (
-    //     <span>🌙 Dark</span>
-    // ) : (
-    //     <span>☀️ Light</span>
-    // )}
-    // </button>
-    // </>
 
 
-    // const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
-    // useEffect(() => {
-    //   document.documentElement.setAttribute("data-theme", theme);
-    //   localStorage.setItem("theme", theme);
-    // }, [theme]);
-  
-    // const toggleTheme = () => {
-    //   setTheme(theme === "light" ? "dark" : "light");
-    // };
+    const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
-    // daisyui: {
-    //     themes: [
-    //       {
-    //         light: {
-    //           primary: "#3b82f6",
-    //           secondary: "#f6d860",
-    //           accent: "#37cdbe",
-    //           neutral: "#3d4451",
-    //           "base-100": "#ffffff",
-    //         },
-    //         dark: {
-    //           primary: "#1e3a8a",
-    //           secondary: "#d97706",
-    //           accent: "#22d3ee",
-    //           neutral: "#1f2937",
-    //           "base-100": "#121212",
-    //         },
-    //       },
-    //     ],
-    //   }
+    useEffect(() => {
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
+    }, [theme]);
+
+    const toggleTheme = () => {
+      setTheme(theme === "light" ? "dark" : "light");
+    };
 
 
 
@@ -78,8 +45,8 @@ const Nav = () => {
 
 
     return (
-        <div className='sticky top-0 z-10 bg-white border-b'>
-            <div className="navbar md:w-11/12 mx-auto">
+        <div className='sticky top-0 z-10 bg-[#1f1e1e13] border-b backdrop-blur-3xl'>
+            <div className="navbar w-full md:w-11/12 mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -106,11 +73,11 @@ const Nav = () => {
                                     <NavLink to="/dashboard/addMarathon"> <button> Dashboard</button></NavLink>
                                 </li>
                             )}
-                         
+
                         </ul>
                     </div>
                     <div className="flex items-center">
-                        <img src="https://www.pngkey.com/png/full/918-9189472_11-marathon-logo.png" alt="Logo" className="w-16 h-12 md:w-20 md:h-16" />
+                        <img src="https://www.pngkey.com/png/full/918-9189472_11-marathon-logo.png" alt="Logo" className="w-12 h-10 md:w-20 md:h-16" />
                         <h2 className='md:text-2xl font-bold'> Champions</h2>
                     </div>
                 </div>
@@ -133,16 +100,32 @@ const Nav = () => {
                                 <NavLink to="/dashboard/addMarathon"> <button> Dashboard</button></NavLink>
                             </li>
                         )}
-                       
+
                     </ul>
                 </div>
                 <div className="navbar-end gap-2">
+                  
+                    <>
+                        <button
+                            className="btn btn-sm  "
+                            onClick={toggleTheme}
+                            aria-label="Toggle Theme"
+                        >
+                            {theme === "light" ? (
+                                <span>🌙 </span>
+                            ) : (
+                                <span>☀️</span>
+                            )}
+                        </button>
+                    </>
+
+
                     {user ? (
                         <div className='flex items-center gap-3'>
                             <img
                                 data-tooltip-id="user-tooltip"
                                 data-tooltip-content={user?.displayName || "User"}
-                                className='md:w-16 md:h-16 w-14 rounded-full'
+                                className='md:w-16 md:h-16 w-10 rounded-full'
                                 src={user?.photoURL}
                                 alt="User"
                             />

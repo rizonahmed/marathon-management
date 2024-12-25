@@ -67,7 +67,7 @@ const AddMarathon = () => {
                 <title>AddMarathon/Champion Marathons</title>
             </Helmet>
 
-            <h2 className="text-2xl font-bold mb-6 text-center">Create a Marathon Event</h2>
+            <h2 className="text-2xl font-bold mb-6 text-center text-black">Create a Marathon Event</h2>
             <form onSubmit={handleSubmit}>
                 <div className="mb-4">
                     <label className="block text-gray-700 font-bold mb-2">Marathon Title</label>
