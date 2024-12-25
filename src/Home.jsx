@@ -266,9 +266,6 @@ const Home = () => {
             </div>
 
 
-           
-
-
 
             <div className="w-11/12 lg:w-10/12 mx-auto my-12 p-6">
                 <h2 className="text-4xl font-extrabold text-center  mb-8">Apply Here Just Now</h2>
@@ -306,12 +303,12 @@ const Home = () => {
             </div>
 
 
-            <div className="w-11/12 lg:w-9/12  mx-auto my-12">
+            <div className="w-11/12 lg:w-9/12 mx-auto my-12">
                 <h2 className="text-4xl font-extrabold text-center mb-8">
                     Upcoming Marathons
                 </h2>
-                <div className="grid grid-cols-1 gap-8 ">
-                    <div className="flex items-center border rounded-lg overflow-hidden shadow-lg">
+                <div className="grid grid-cols-1 gap-8">
+                    <div className="flex items-center border rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
                         <img
                             src="https://cms-in.musafir.com/uploads/9_Marathons_in_India_that_you_must_run_at_least_once_in_your_lifetime_671eb2c549.png"
                             alt="Marathon"
@@ -330,7 +327,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="flex items-center border rounded-lg overflow-hidden shadow-lg">
+                    <div className="flex items-center border rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
                         <img
                             src="https://s3.ap-southeast-1.amazonaws.com/images.asianage.com/images/aa-Cover-6g98slub5mf36hjul7r8te5lu6-20180808222136.Medi.jpeg"
                             alt="Marathon"
@@ -349,7 +346,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="flex items-center border rounded-lg overflow-hidden shadow-lg">
+                    <div className="flex items-center border rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
                         <img
                             src="https://thebridge.in/wp-content/uploads/2020/10/A-still-from-Airtel-Delhi-Half-Marathon.jpg"
                             alt="Marathon"
@@ -368,7 +365,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="flex items-center border rounded-lg overflow-hidden shadow-lg">
+                    <div className="flex items-center border rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
                         <img
                             src="https://mybestruns.com/photo/1277.jpg?ver=1539617670"
                             alt="Marathon"
@@ -387,7 +384,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="flex items-center border rounded-lg overflow-hidden shadow-lg">
+                    <div className="flex items-center border rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
                         <img
                             src="https://www.nathanflear.co.uk/wp-content/uploads/2024/08/running-in-india-indian-runners.jpg"
                             alt="Marathon"
@@ -406,7 +403,7 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="flex items-center border rounded-lg overflow-hidden shadow-lg">
+                    <div className="flex items-center border rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
                         <img
                             src="https://media.licdn.com/dms/image/D4D12AQEA1k9BEpifpA/article-cover_image-shrink_720_1280/0/1714468261700?e=2147483647&v=beta&t=Z7C1FPBNn_Oxsv6z2Re4jk92nPra-To9nYpQTV9h99A"
                             alt="Marathon"
@@ -417,7 +414,7 @@ const Home = () => {
                                 Upcoming
                             </span>
                             <h3 className="text-2xl font-bold mb-1">Heritage City Run</h3>
-                            <p className="text-gray-600 mb-1">Location: singapore</p>
+                            <p className="text-gray-600 mb-1">Location: Singapore</p>
                             <p className="text-gray-600">Prize Money: $11,000</p>
                             <p className="text-sm text-gray-500 mt-2">
                                 Registration: Sep 1, 2024 - Oct 31, 2024
@@ -426,6 +423,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+
 
 
             <section>

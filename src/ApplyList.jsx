@@ -93,7 +93,7 @@ const ApplyList = () => {
                         <tr>
                             <th className="py-3 px-6 text-center">#</th> 
                             <th className="py-3 px-6 text-center">Marathon Title</th>
-                            <th className="py-3 px-6 text-center">Marathon Start Date</th>
+                            <th className="py-3 px-6 text-center"> Start Date</th>
                             <th className="py-3 px-6 text-center">Actions</th>
                         </tr>
                     </thead>

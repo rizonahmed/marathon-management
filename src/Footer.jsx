@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 
 const Footer = () => {
@@ -23,24 +24,16 @@ const Footer = () => {
                     <h3 className="text-lg font-semibold text-green-600 mb-4">Useful Links</h3>
                     <ul className="space-y-2">
                         <li>
-                            <a href="#" className="hover:text-green-500">
-                                Home
-                            </a>
+                             <Link to="/" className="hover:text-green-500"> Home</Link>
                         </li>
                         <li>
-                            <a href="#" className="hover:text-green-500">
-                                About Us
-                            </a>
+                             <Link to="/about" className="hover:text-green-500"> About Us</Link>
                         </li>
                         <li>
-                            <a href="#" className="hover:text-green-500">
-                                Services
-                            </a>
+                             <Link to="/services" className="hover:text-green-500">Services</Link>
                         </li>
                         <li>
-                            <a href="#" className="hover:text-green-500">
-                                Contact
-                            </a>
+                             <Link to="" className="hover:text-green-500"> Contact</Link>
                         </li>
                     </ul>
                 </div>
