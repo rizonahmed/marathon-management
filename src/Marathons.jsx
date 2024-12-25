@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Marathons = () => {
@@ -23,6 +24,9 @@ const Marathons = () => {
 
     return (
         <div className="my-10 w-11/12 mx-auto md:w-9/12 ">
+            <Helmet>
+                <title>Marathons/Champion Marathons</title>
+            </Helmet>
             <h2 className="text-2xl font-bold text-center mb-8">Marathon Events</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {marathons.map((marathon) => (

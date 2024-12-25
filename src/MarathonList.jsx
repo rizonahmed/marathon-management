@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { AuthContext } from './AuthProvider';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 const MarathonList = () => {
     const { user } = useContext(AuthContext);
@@ -69,7 +70,7 @@ const MarathonList = () => {
         setSelectedMarathon(marathon);
         setIsModalOpen(true);
     };
- 
+
 
     const handleModalSubmit = async (updatedMarathon) => {
         try {
@@ -88,12 +89,17 @@ const MarathonList = () => {
         }
     };
 
-  
-    if (loading)     return <div className='text-center text-gray-700 text-3xl'> <span className="loading loading-ring loading-lg text-lime-600"></span> </div>
+
+    if (loading) return <div className='text-center text-gray-700 text-3xl'> <span className="loading loading-ring loading-lg text-lime-600"></span> </div>
     if (error) return <div className="text-red-600">{error}</div>;
 
     return (
         <div className="container mx-auto mb-20 p-6">
+
+            <Helmet>
+                <title>MarathonList/Champion Marathons</title>
+            </Helmet>
+
             <h2 className="text-center text-2xl font-semibold mb-6">My Marathons</h2>
 
             <div className="overflow-x-auto">

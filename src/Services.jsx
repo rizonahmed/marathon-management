@@ -1,8 +1,13 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 const Services = () => {
     return (
         <div className="py-12">
+
+            <Helmet>
+                <title>Services/Champion Marathons</title>
+            </Helmet>
             <div className="container mx-auto px-6 lg:px-20">
                 <h2 className="text-4xl font-semibold text-center text-gray-800 mb-10">
                     Our Services
@@ -12,9 +17,9 @@ const Services = () => {
                     <div className="lg:w-1/2 mb-6 lg:mb-0">
                         <h3 className="text-3xl font-bold text-gray-800 mb-4">Marathon Management</h3>
                         <p className="text-gray-600 text-lg">
-                            Simplify marathon planning and execution with our comprehensive management tools. 
-                            From creating and customizing events to tracking registrations, we provide a seamless 
-                            experience for event organizers. Let us handle the logistics so you can focus on building 
+                            Simplify marathon planning and execution with our comprehensive management tools.
+                            From creating and customizing events to tracking registrations, we provide a seamless
+                            experience for event organizers. Let us handle the logistics so you can focus on building
                             a memorable event.
                         </p>
                     </div>
@@ -38,9 +43,9 @@ const Services = () => {
                     <div className="lg:w-1/2 mb-6 lg:mb-0">
                         <h3 className="text-3xl font-bold text-gray-800 mb-4">Participant Engagement</h3>
                         <p className="text-gray-600 text-lg">
-                            Engage with marathon participants effortlessly. Our platform enables users to 
-                            explore events, view detailed information, and apply for marathons with ease. 
-                            Ensure your participants have a smooth and enjoyable experience, from registration 
+                            Engage with marathon participants effortlessly. Our platform enables users to
+                            explore events, view detailed information, and apply for marathons with ease.
+                            Ensure your participants have a smooth and enjoyable experience, from registration
                             to race day.
                         </p>
                     </div>
@@ -50,9 +55,9 @@ const Services = () => {
                     <div className="lg:w-1/2 mb-6 lg:mb-0">
                         <h3 className="text-3xl font-bold text-gray-800 mb-4">Data-Driven Insights</h3>
                         <p className="text-gray-600 text-lg">
-                            Unlock valuable insights with real-time analytics and reporting. 
-                            Track registrations, monitor event performance, and gather feedback to 
-                            continuously improve your marathons. Our platform helps you make data-informed 
+                            Unlock valuable insights with real-time analytics and reporting.
+                            Track registrations, monitor event performance, and gather feedback to
+                            continuously improve your marathons. Our platform helps you make data-informed
                             decisions to achieve your goals.
                         </p>
                     </div>
@@ -85,7 +90,7 @@ const Services = () => {
                                 Seamless Event Organization
                             </h3>
                             <p className="text-gray-600">
-                                Organize marathons effortlessly with our user-friendly tools. From event creation 
+                                Organize marathons effortlessly with our user-friendly tools. From event creation
                                 to participant management, our platform simplifies every step of the process.
                             </p>
                         </div>
@@ -102,7 +107,7 @@ const Services = () => {
                                 Empower Participants
                             </h3>
                             <p className="text-gray-600">
-                                Provide participants with the tools they need to explore, register, and 
+                                Provide participants with the tools they need to explore, register, and
                                 engage with marathon events, ensuring an exceptional experience.
                             </p>
                         </div>
@@ -119,7 +124,7 @@ const Services = () => {
                                 Advanced Analytics
                             </h3>
                             <p className="text-gray-600">
-                                Leverage data insights to track event performance, monitor participation trends, 
+                                Leverage data insights to track event performance, monitor participation trends,
                                 and make informed decisions to enhance your events.
                             </p>
                         </div>

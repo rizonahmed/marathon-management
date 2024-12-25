@@ -1,8 +1,13 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 const About = () => {
     return (
         <div>
+
+            <Helmet>
+                <title>About/Champion Marathons</title>
+            </Helmet>
 
             <div className=" py-16">
                 <div className="container mx-auto px-6">

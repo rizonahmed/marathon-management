@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Typewriter } from 'react-simple-typewriter'
 import { AuthContext } from './AuthProvider';
 import { Link, useLoaderData } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
     const cards = useLoaderData()
@@ -67,7 +68,9 @@ const Home = () => {
     return (
         <div>
 
-
+              <Helmet>
+                <title>Home/Champion Marathons</title>
+            </Helmet>
 
             <div className="carousel w-full">
 

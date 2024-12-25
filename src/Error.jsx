@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
 const Error = () => {
@@ -12,6 +13,10 @@ const Error = () => {
          
            <Link to="/"> <button className="btn btn-primary bg bg-white text-green-600 font-bold text-base  hover:bg-gray-50 absolute top-10 left-10">Back To Home</button>
            </Link>
+
+           <Helmet>
+                <title>Error/Champion Marathons</title>
+            </Helmet>
         </div>
        
     );

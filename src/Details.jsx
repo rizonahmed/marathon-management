@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 
 const Details = () => {
@@ -50,6 +51,11 @@ const Details = () => {
 
     return (
         <div className="max-w-5xl mx-auto my-12 p-6 border rounded-lg shadow-lg">
+
+            <Helmet>
+                <title>Details/Champion Marathons</title>
+            </Helmet>
+
             <div className="relative">
                 <img
                     src={marathon.marathonImageUrl}
@@ -95,7 +101,7 @@ const Details = () => {
                         </p>
                     </div>
                     <div className="md:text-end">
-                        
+
                         <p className="text-lg text-gray-600 mt-2">
                             <strong>Registration:</strong>{' '}
                             {new Date(marathon.registrationStartDate).toLocaleDateString()} -{' '}

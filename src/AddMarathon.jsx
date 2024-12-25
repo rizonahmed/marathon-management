@@ -4,6 +4,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Swal from 'sweetalert2';
 import { AuthContext } from './AuthProvider';
+import { Helmet } from 'react-helmet';
 
 const AddMarathon = () => {
     const {user} = useContext(AuthContext)
@@ -62,6 +63,10 @@ const AddMarathon = () => {
 
     return (
         <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-2xl">
+            <Helmet>
+                <title>AddMarathon/Champion Marathons</title>
+            </Helmet>
+
             <h2 className="text-2xl font-bold mb-6 text-center">Create a Marathon Event</h2>
             <form onSubmit={handleSubmit}>
                 <div className="mb-4">
