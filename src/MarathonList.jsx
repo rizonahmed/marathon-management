@@ -21,7 +21,7 @@ const MarathonList = () => {
 
         const fetchMarathons = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/myMarathons?email=${user?.email}`, {withCredentials:true});
+                const response = await axios.get(`https://marathon-server-kappa.vercel.app/myMarathons?email=${user?.email}`, {withCredentials:true});
                 setMarathons(response.data);
                 setLoading(false);
             } catch (error) {
@@ -49,7 +49,7 @@ const MarathonList = () => {
         }).then((result) => {
 
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/delete/${id}`, {withCredentials:true})
+                axios.delete(`https://marathon-server-kappa.vercel.app/delete/${id}`, {withCredentials:true})
                     .then(() => {
                         Swal.fire({
                             title: "Deleted!",
@@ -74,7 +74,7 @@ const MarathonList = () => {
         const {_id, ...rest} = updatedMarathon
         try {
             const res = await axios.put(
-                `http://localhost:5000/marathons/${updatedMarathon?._id}`,
+                `https://marathon-server-kappa.vercel.app/marathons/${updatedMarathon?._id}`,
                 rest
             , {withCredentials:true});
             const data = await res?.data

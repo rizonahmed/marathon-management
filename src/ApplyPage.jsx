@@ -43,10 +43,10 @@ const ApplyPage = () => {
         };
 
         try {
-            const response = await axios.post("http://localhost:5000/applyList", registrationData, {withCredentials:true});
+            const response = await axios.post("https://marathon-server-kappa.vercel.app/applyList", registrationData, {withCredentials:true});
 
             if (response.status === 200) {
-                const res = await axios.patch(`http://localhost:5000/applyListIncrement/${marathon._id}`, {withCredentials:true});
+                const res = await axios.patch(`https://marathon-server-kappa.vercel.app/applyListIncrement/${marathon._id}`, {withCredentials:true});
                 const data = await res.data
                 Swal.fire({
                     icon: "success",

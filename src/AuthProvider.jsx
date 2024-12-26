@@ -43,7 +43,7 @@ const AuthProvider = ({ children }) => {
                 try {
                     const fetchData = async () => {
                         const res = await axios.post(
-                            'http://localhost:5000/create-token',
+                            'https://marathon-server-kappa.vercel.app/create-token',
                             userInfo,
                             { withCredentials: true }  
                         );
@@ -58,7 +58,7 @@ const AuthProvider = ({ children }) => {
                 try {
                     const fetchData = async () => {
                         const res = await axios.post(
-                            'http://localhost:5000/logout',
+                            'https://marathon-server-kappa.vercel.app/logout',
                             {},
                             { withCredentials: true }  
                         );
