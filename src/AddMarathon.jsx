@@ -61,7 +61,7 @@ const AddMarathon = () => {
     
 
     return (
-        <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-2xl">
+        <div className="max-w-4xl mx-auto p-6 bg-gray-300 rounded-lg shadow-2xl">
             <Helmet>
                 <title>AddMarathon/Champion Marathons</title>
             </Helmet>
