@@ -5,9 +5,11 @@ import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 const Details = () => {
     const marathon = useLoaderData();
     const navigate = useNavigate();
+    const [loading, setLoading] = useState(true); // Loading state
 
+    // Countdown Calculation
     const calculateTimeLeft = () => {
-        const startDate = new Date(marathon.marathonStartDate).getTime();
+        const startDate = new Date(marathon?.marathonStartDate).getTime();
         const now = new Date().getTime();
         const difference = startDate - now;
 
@@ -25,29 +27,49 @@ const Details = () => {
 
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
+    // Load data with spinner
+    useEffect(() => {
+        if (marathon) {
+            setLoading(false); // Data load complete
+            setTimeLeft(calculateTimeLeft());
+        }
+    }, [marathon]);
+
     useEffect(() => {
         const timer = setInterval(() => {
             setTimeLeft(calculateTimeLeft());
         }, 1000);
 
         return () => clearInterval(timer);
-    }, []);
+    }, [marathon]);
 
+    // Registration Button Handler
     const handleRegister = () => {
-        navigate(`/register/${marathon._id}`, {
+        navigate(`/register/${marathon?._id}`, {
+            replace: true, // Fixing back button issue
             state: {
                 email: "user@example.com",
-                marathonTitle: marathon.marathonTitle,
-                marathonStartDate: marathon.marathonStartDate,
+                marathonTitle: marathon?.marathonTitle,
+                marathonStartDate: marathon?.marathonStartDate,
             },
         });
     };
 
+    // Check Ongoing or Upcoming
     const isOngoing =
-        new Date() >= new Date(marathon.registrationStartDate) &&
-        new Date() <= new Date(marathon.registrationEndDate);
+        new Date() >= new Date(marathon?.registrationStartDate) &&
+        new Date() <= new Date(marathon?.registrationEndDate);
 
     const label = isOngoing ? 'Ongoing' : 'Upcoming';
+
+    // Loading Spinner
+    if (loading) {
+        return (
+            <div className="flex justify-center items-center h-screen">
+                <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
+            </div>
+        );
+    }
 
     return (
         <div className="max-w-5xl mx-auto my-12 p-6 border rounded-lg shadow-lg bg-slate-300">
@@ -58,8 +80,8 @@ const Details = () => {
 
             <div className="relative">
                 <img
-                    src={marathon.marathonImageUrl}
-                    alt={marathon.marathonTitle}
+                    src={marathon?.marathonImageUrl}
+                    alt={marathon?.marathonTitle}
                     className="w-full h-64 object-cover rounded-lg"
                 />
                 <div
@@ -72,9 +94,9 @@ const Details = () => {
 
             <div className="mt-8">
                 <h1 className="text-4xl font-extrabold text-black text-center mb-4">
-                    {marathon.marathonTitle}
+                    {marathon?.marathonTitle}
                 </h1>
-                <p className="text-center text-gray-700 text-lg">{marathon.description}</p>
+                <p className="text-center text-gray-700 text-lg">{marathon?.description}</p>
 
                 <div className="flex justify-center gap-4 mt-8">
                     {["Days", "Hours", "Minutes", "Seconds"].map((unit, index) => {
@@ -94,18 +116,17 @@ const Details = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
                     <div>
                         <p className="text-lg text-gray-600">
-                            <strong>Location:</strong> {marathon.location}
+                            <strong>Location:</strong> {marathon?.location}
                         </p>
                         <p className="text-lg text-gray-600 mt-2">
-                            <strong>Distance:</strong> {marathon.runningDistance}
+                            <strong>Distance:</strong> {marathon?.runningDistance}
                         </p>
                     </div>
                     <div className="md:text-end">
-
                         <p className="text-lg text-gray-600 mt-2">
                             <strong>Registration:</strong>{' '}
-                            {new Date(marathon.registrationStartDate).toLocaleDateString()} -{' '}
-                            {new Date(marathon.registrationEndDate).toLocaleDateString()}
+                            {new Date(marathon?.registrationStartDate).toLocaleDateString()} -{' '}
+                            {new Date(marathon?.registrationEndDate).toLocaleDateString()}
                         </p>
                     </div>
                 </div>
