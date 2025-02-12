@@ -13,7 +13,7 @@ const Marathons = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`https://marathon-server-kappa.vercel.app/allMarathons?sortOrder=${sortOrder}`, { withCredentials: true })
+        axios.get(` http://localhost:5000/allMarathons?sortOrder=${sortOrder}`, { withCredentials: true })
             .then((response) => {
                 setMarathons(response.data);
             })

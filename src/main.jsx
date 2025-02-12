@@ -37,7 +37,7 @@ errorElement:<Error></Error>,
       {
         path: '/',
         element:<Home></Home>,
-        loader: ()=> fetch('https://marathon-server-kappa.vercel.app/limitedData' ,{credentials: 'include'})
+        loader: ()=> fetch(' http://localhost:5000/limitedData' ,{credentials: 'include'})
       },
       {
         path: '/marathons',
@@ -62,12 +62,12 @@ errorElement:<Error></Error>,
       {
          path: '/details/:id',
          element: <Private><Details></Details></Private>,
-         loader: ({ params }) =>  fetch(`https://marathon-server-kappa.vercel.app/allMarathons/${params.id}`, {credentials: 'include'})
+         loader: ({ params }) =>  fetch(` http://localhost:5000/allMarathons/${params.id}`, {credentials: 'include'})
       },
       {
         path:'/applyPage/:id',
         element:<Private><ApplyPage></ApplyPage></Private>,
-        loader: ({ params }) =>  fetch(`https://marathon-server-kappa.vercel.app/allMarathons/${params.id}` , {credentials: 'include'})
+        loader: ({ params }) =>  fetch(` http://localhost:5000/allMarathons/${params.id}` , {credentials: 'include'})
       },
       {
       path: '/dashboard',

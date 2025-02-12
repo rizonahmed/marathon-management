@@ -279,7 +279,7 @@ const Home = () => {
             <div className="w-11/12 lg:w-10/12 mx-auto my-12 p-6"   >
                 <h2 className="text-4xl font-extrabold text-center  mb-8">Apply Here Just Now</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {cards.map((marathon) => (
+                    {cards?.map((marathon) => (
                         <div
                             data-aos="fade-up"
                             data-aos-duration="3000"

@@ -22,7 +22,7 @@ const ApplyList = () => {
         const fetchApplications = async () => {
             try {
                 const response = await axios.get(
-                    `https://marathon-server-kappa.vercel.app/applyList?email=${user?.email}`,
+                    ` http://localhost:5000/applyList?email=${user?.email}`,
                     { withCredentials: true }
                 );
                 setApplications(response.data);
@@ -50,7 +50,7 @@ const ApplyList = () => {
     
         try {
             const response = await axios.put(
-                `https://marathon-server-kappa.vercel.app/applyList/${selectedApplication._id}`,
+                ` http://localhost:5000/applyList/${selectedApplication._id}`,
                 updatedDetails,
                 { withCredentials: true }
             );
@@ -83,7 +83,7 @@ const ApplyList = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 axios
-                    .delete(`https://marathon-server-kappa.vercel.app/deleted/${id}`, { withCredentials: true })
+                    .delete(` http://localhost:5000/deleted/${id}`, { withCredentials: true })
                     .then(() => {
                         setApplications(applications.filter((app) => app._id !== id));
                         Swal.fire('Deleted!', 'Your registration has been removed.', 'success');

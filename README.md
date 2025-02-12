@@ -3,7 +3,7 @@
 Welcome to the Marathon Management System! This platform helps organize and manage marathon events by connecting event organizers with participants. Users can create marathons, sign up for events, and manage their registrations through a personal dashboard. 
 
 ## Live Website
-[Live Website URL](https://marathon-management-f25a3.web.app/)
+[Live Website URL](https://marathon-management-f25a3.web.app)
 
 ## Features
 

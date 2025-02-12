@@ -44,7 +44,15 @@ const Login = () => {
     const handleGoogleLogin = () => {
         googleSignIn()
             .then((result) => {
-                navigate("/");
+                Swal.fire({
+                    title: "Login Success!",
+                    text: "Wait a moment!",
+                    icon: "success",
+                });
+
+                setTimeout(() => {
+                    navigate("/");
+                }, 2000);
             })
             .catch((error) => {
                 Swal.fire({
