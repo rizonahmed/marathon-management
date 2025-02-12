@@ -43,7 +43,7 @@ const Nav = () => {
 
 
     return (
-        <div className='sticky top-0 z-10 bg-[#1f1e1e13] border-b backdrop-blur-3xl'>
+        <div className='sticky top-0 z-10 bg-[#1f1e1e10] border-b backdrop-blur-3xl'>
             <div className="navbar w-full md:w-11/12 mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">

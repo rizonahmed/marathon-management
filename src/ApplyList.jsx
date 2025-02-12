@@ -130,7 +130,7 @@ const ApplyList = () => {
                                     </td>
                                     <td className="py-3 px-6 text-center">
                                         <button
-                                            className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-200"
+                                            className="mb-3 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-200"
                                             onClick={() => handleUpdate(application)}
                                         >
                                             Update
