@@ -299,11 +299,11 @@ const Home = () => {
                             <div className="p-5">
                                 <h3 className="text-xl font-bold text-green-600">{marathon.marathonTitle}</h3>
                                 <p className="text-gray-500 text-sm">{marathon.location}</p>
-                                <p className="text-gray-600 text-sm mt-2">
+                                {/* <p className="text-gray-600 text-sm mt-2">
                                     <span className="font-semibold">Registration:</span>{' '}
                                     {new Date(marathon.registrationStartDate).toLocaleDateString()} -{' '}
                                     {new Date(marathon.registrationEndDate).toLocaleDateString()}
-                                </p>
+                                </p> */}
                                 <Link to={`/details/${marathon._id}`}><button className="mt-4 w-full  bg-gradient-to-r from-gray-600 to-teal-500 hover:from-teal-500 hover:to-gray-600 text-white py-2 rounded-lg hover:bg-green-700 transition-shadow hover:shadow-md">
                                     See Details
                                 </button></Link>
