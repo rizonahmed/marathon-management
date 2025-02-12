@@ -609,8 +609,8 @@ const Home = () => {
                                         <li>✔️ -50% Group coaching</li>
                                         <li>✔️ 24/7 Customer Support</li>
                                     </ul>
-                                    <button className="mt-6 w-full py-2 bg-green-600 text-white rounded-md hover:bg-green-700">
-                                        Get Started
+                                    <button disabled className="mt-6 w-full py-2 bg-gray-600 text-white rounded-md ">
+                                        Coming Soon 
                                     </button>
                                 </div>
 
@@ -626,8 +626,8 @@ const Home = () => {
                                         <li>✔️ Weekly check-ins</li>
                                         <li>✔️ 24/7 Customer Support</li>
                                     </ul>
-                                    <button className="mt-6 w-full py-2 bg-green-600 text-white rounded-md hover:bg-green-600">
-                                        Get Started
+                                    <button disabled className="mt-6 w-full py-2 bg-gray-600 text-white rounded-md ">
+                                         Coming Soon
                                     </button>
                                 </div>
                             </>
@@ -644,8 +644,8 @@ const Home = () => {
                                         <li>✔️ Group coaching sessions</li>
                                         <li>✔️ 24/7 Customer Support</li>
                                     </ul>
-                                    <button className="mt-6 w-full py-2 bg-green-600 text-white rounded-md hover:bg-green-700">
-                                        Get Started
+                                    <button disabled className="mt-6 w-full py-2 bg-gray-600 text-white rounded-md  ">
+                                         Coming Soon
                                     </button>
                                 </div>
 
@@ -660,8 +660,8 @@ const Home = () => {
                                         <li>✔️ Weekly check-ins</li>
                                         <li>✔️ 24/7 Priority Support</li>
                                     </ul>
-                                    <button className="mt-6 w-full py-2 bg-green-600   text-white rounded-md hover:bg-green-600">
-                                        Get Started
+                                    <button disabled className="mt-6 w-full py-2 bg-gray-600   text-white rounded-md  ">
+                                        Coming Soon
                                     </button>
                                 </div>
                             </>
